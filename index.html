@@ -1,0 +1,1864 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Mauricio Vidal | Emagrecimento Clínico e Nutrologia</title>
+<meta name="description" content="Consulta médica online para emagrecimento com abordagem clínica individualizada. Tratamento para quem já tentou de tudo e não conseguiu manter o resultado.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0A0A0A;
+    --paper: #F5F0E8;
+    --paper-deep: #E8DFD3;
+    --petrol: #1B3A4B;
+    --petrol-deep: #0E2632;
+    --white: #FFFFFF;
+    --rule: rgba(10, 10, 10, 0.12);
+    --muted: rgba(10, 10, 10, 0.6);
+    --display: "Fraunces", Georgia, serif;
+    --sans: "Geist", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ========= GRAIN OVERLAY ========= */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    pointer-events: none;
+    z-index: 100;
+    mix-blend-mode: multiply;
+    opacity: 0.5;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  @media (max-width: 720px) {
+    .container { padding: 0 20px; }
+  }
+
+  /* ========= NAV ========= */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    padding: 20px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(245, 240, 232, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .brand {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    font-style: italic;
+  }
+
+  .brand span {
+    font-style: normal;
+    font-weight: 400;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: block;
+    margin-top: 2px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-links a {
+    position: relative;
+    padding-bottom: 2px;
+  }
+
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--ink);
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    padding: 10px 18px;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 2px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+
+  .nav-cta:hover { background: var(--petrol); }
+
+  @media (max-width: 860px) {
+    .nav-links { display: none; }
+  }
+
+  /* ========= HERO ========= */
+  .hero {
+    min-height: 100vh;
+    padding: 140px 0 80px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    align-items: end;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    animation: fadeUp 0.9s ease both;
+  }
+
+  .hero-eyebrow::before {
+    content: "";
+    width: 40px;
+    height: 1px;
+    background: var(--ink);
+  }
+
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(48px, 8.5vw, 132px);
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+    margin-bottom: 48px;
+    animation: fadeUp 1s 0.1s ease both;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--petrol);
+  }
+
+  .hero-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+    animation: fadeUp 1s 0.3s ease both;
+  }
+
+  .hero-meta p {
+    font-size: 17px;
+    line-height: 1.55;
+    max-width: 52ch;
+    color: var(--ink);
+  }
+
+  .hero-meta .credential {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    line-height: 1.8;
+  }
+
+  .hero-cta-row {
+    margin-top: 48px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    animation: fadeUp 1s 0.5s ease both;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 32px;
+    border-radius: 2px;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid var(--ink);
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .btn-primary:hover {
+    background: var(--petrol);
+    border-color: var(--petrol);
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+  }
+
+  .btn-ghost:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .btn .arrow {
+    transition: transform 0.3s ease;
+  }
+
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  @media (max-width: 720px) {
+    .hero-meta {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .hero-cta-row { flex-direction: column; }
+    .btn { justify-content: center; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ========= MARQUEE ========= */
+  .marquee {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 20px 0;
+    overflow: hidden;
+    background: var(--paper-deep);
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 48px;
+    animation: scroll 40s linear infinite;
+    white-space: nowrap;
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 22px;
+    color: var(--petrol);
+  }
+
+  .marquee-track span::after {
+    content: "·";
+    margin-left: 48px;
+    color: var(--muted);
+  }
+
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ========= SECTION BASE ========= */
+  section {
+    padding: 120px 0;
+    position: relative;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+  }
+
+  .section-label .num {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .section-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+    margin-left: 12px;
+  }
+
+  h2.section-title {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(38px, 5.5vw, 82px);
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    margin-bottom: 32px;
+  }
+
+  h2.section-title em {
+    font-style: italic;
+    color: var(--petrol);
+  }
+
+  /* ========= MANIFESTO ========= */
+  .manifesto {
+    background: var(--paper-deep);
+  }
+
+  .manifesto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 100px;
+    align-items: start;
+  }
+
+  .manifesto-lead {
+    position: sticky;
+    top: 120px;
+  }
+
+  .manifesto-body p {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 1.4;
+    letter-spacing: -0.015em;
+    margin-bottom: 32px;
+    color: var(--ink);
+  }
+
+  .manifesto-body p em {
+    font-style: italic;
+    color: var(--petrol);
+  }
+
+  .manifesto-body p strong {
+    font-weight: 500;
+  }
+
+  .manifesto-body .signature {
+    margin-top: 60px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .manifesto-body .signature-name {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 22px;
+    font-weight: 400;
+  }
+
+  .manifesto-body .signature-role {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  @media (max-width: 960px) {
+    .manifesto-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .manifesto-lead { position: static; }
+    .manifesto-body p { font-size: 22px; }
+  }
+
+  /* ========= PILLARS ========= */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    margin-top: 40px;
+  }
+
+  .pillar {
+    padding: 48px 32px 48px 0;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .pillar:nth-child(3n) { border-right: none; padding-right: 0; }
+  .pillar:nth-child(3n+1) { padding-left: 0; }
+  .pillar:not(:nth-child(3n+1)):not(:nth-child(3n)) { padding-left: 32px; padding-right: 32px; }
+
+  .pillar-num {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 48px;
+    color: var(--petrol);
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .pillar h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+  }
+
+  .pillar p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+
+  @media (max-width: 860px) {
+    .pillars-grid { grid-template-columns: 1fr; }
+    .pillar {
+      padding: 32px 0 !important;
+      border-right: none;
+    }
+  }
+
+  /* ========= FOR WHOM ========= */
+  .for-whom {
+    background: var(--petrol);
+    color: var(--paper);
+  }
+
+  .for-whom .section-label { color: rgba(245, 240, 232, 0.6); }
+  .for-whom .section-label .num { color: var(--paper); }
+  .for-whom .section-label::after { background: rgba(245, 240, 232, 0.2); }
+
+  .for-whom h2.section-title em { color: var(--paper-deep); }
+
+  .forwhom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-top: 60px;
+  }
+
+  .forwhom-col h4 {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 28px;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(245, 240, 232, 0.25);
+  }
+
+  .forwhom-list {
+    list-style: none;
+  }
+
+  .forwhom-list li {
+    font-size: 17px;
+    line-height: 1.5;
+    padding: 18px 0 18px 32px;
+    position: relative;
+    border-bottom: 1px solid rgba(245, 240, 232, 0.12);
+  }
+
+  .forwhom-list li::before {
+    position: absolute;
+    left: 0; top: 18px;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 20px;
+  }
+
+  .forwhom-col.yes .forwhom-list li::before {
+    content: "+";
+    color: var(--paper-deep);
+  }
+
+  .forwhom-col.no .forwhom-list li::before {
+    content: "−";
+    color: rgba(245, 240, 232, 0.4);
+  }
+
+  .forwhom-col.no .forwhom-list li {
+    color: rgba(245, 240, 232, 0.6);
+  }
+
+  @media (max-width: 860px) {
+    .forwhom-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
+
+  /* ========= METHOD ========= */
+  .method-intro {
+    max-width: 640px;
+    margin-bottom: 80px;
+  }
+
+  .method-intro p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+
+  .method-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .method-step {
+    display: grid;
+    grid-template-columns: 120px 1fr 2fr;
+    gap: 40px;
+    padding: 48px 0;
+    border-top: 1px solid var(--rule);
+    align-items: start;
+    transition: padding 0.3s ease;
+  }
+
+  .method-step:last-child { border-bottom: 1px solid var(--rule); }
+
+  .method-step:hover { padding-left: 16px; }
+
+  .method-step-num {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 64px;
+    font-style: italic;
+    color: var(--petrol);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .method-step h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+  }
+
+  .method-step-body p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+
+  .method-step-body ul {
+    list-style: none;
+    padding-top: 12px;
+  }
+
+  .method-step-body ul li {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .method-step-body ul li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--petrol);
+  }
+
+  @media (max-width: 860px) {
+    .method-step {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .method-step:hover { padding-left: 0; }
+  }
+
+  /* ========= JOURNAL / ARTICLES ========= */
+  .journal {
+    background: var(--paper-deep);
+  }
+
+  .journal-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 60px;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .journal-head p {
+    max-width: 38ch;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .article {
+    padding: 48px 40px 48px 0;
+    border-bottom: 1px solid var(--rule);
+    cursor: pointer;
+    transition: background 0.3s ease;
+    position: relative;
+  }
+
+  .article:nth-child(odd) { border-right: 1px solid var(--rule); }
+  .article:nth-child(even) { padding-left: 40px; padding-right: 0; }
+
+  .article:hover {
+    background: rgba(27, 58, 75, 0.04);
+  }
+
+  .article-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .article-cat {
+    color: var(--petrol);
+  }
+
+  .article h3 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    transition: color 0.3s;
+  }
+
+  .article h3 em { font-style: italic; color: var(--petrol); }
+
+  .article:hover h3 { color: var(--petrol); }
+
+  .article-excerpt {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink);
+    margin-bottom: 24px;
+    max-width: 46ch;
+  }
+
+  .article-more {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .article-more .arrow { transition: transform 0.3s; }
+  .article:hover .article-more .arrow { transform: translateX(6px); }
+
+  /* ========= ARTICLE EXPANDED ========= */
+  .article-full {
+    display: none;
+    padding: 48px 40px 60px 0;
+    border-bottom: 1px solid var(--rule);
+    grid-column: 1 / -1;
+    animation: fadeUp 0.4s ease;
+  }
+
+  .article-full.open { display: block; }
+
+  .article-full .full-body {
+    max-width: 68ch;
+    margin-top: 32px;
+  }
+
+  .article-full .full-body p {
+    font-size: 17px;
+    line-height: 1.75;
+    margin-bottom: 22px;
+    color: var(--ink);
+  }
+
+  .article-full .full-body p em {
+    font-style: italic;
+    color: var(--petrol);
+  }
+
+  .article-full .full-body p strong {
+    font-weight: 500;
+  }
+
+  .article-full .full-body h4 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 24px;
+    margin: 40px 0 16px;
+    letter-spacing: -0.01em;
+  }
+
+  .article-full .close-btn {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--muted);
+    background: none;
+    border: none;
+    font-family: var(--sans);
+    margin-top: 32px;
+    padding: 8px 0;
+  }
+
+  .article-full .close-btn:hover { color: var(--ink); }
+
+  @media (max-width: 860px) {
+    .articles-grid { grid-template-columns: 1fr; }
+    .article,
+    .article:nth-child(even) {
+      padding: 40px 0;
+      border-right: none;
+    }
+    .article-full { padding: 32px 0; }
+  }
+
+  /* ========= FAQ ========= */
+  .faq-head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: end;
+    margin-bottom: 40px;
+  }
+
+  .faq-head p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 42ch;
+  }
+
+  .faq-list {
+    border-top: 1px solid var(--rule);
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 32px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    cursor: pointer;
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(20px, 2.4vw, 30px);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    text-align: left;
+    transition: color 0.3s;
+  }
+
+  .faq-question:hover { color: var(--petrol); }
+
+  .faq-toggle {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 36px;
+    font-style: italic;
+    color: var(--petrol);
+    flex-shrink: 0;
+    transition: transform 0.4s ease;
+    line-height: 1;
+  }
+
+  .faq-item.open .faq-toggle {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+
+  .faq-item.open .faq-answer {
+    max-height: 600px;
+  }
+
+  .faq-answer-inner {
+    padding: 0 0 36px;
+    max-width: 62ch;
+  }
+
+  .faq-answer-inner p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+
+  .faq-answer-inner p em { color: var(--petrol); font-style: italic; }
+
+  @media (max-width: 860px) {
+    .faq-head { grid-template-columns: 1fr; gap: 24px; }
+  }
+
+  /* ========= CTA FINAL ========= */
+  .cta-final {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 160px 0;
+    text-align: left;
+  }
+
+  .cta-final .section-label { color: rgba(245, 240, 232, 0.5); }
+  .cta-final .section-label .num { color: var(--paper); }
+  .cta-final .section-label::after { background: rgba(245, 240, 232, 0.15); }
+
+  .cta-final h2 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(44px, 7vw, 104px);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    margin-bottom: 60px;
+    max-width: 14ch;
+  }
+
+  .cta-final h2 em {
+    font-style: italic;
+    color: var(--paper-deep);
+  }
+
+  .cta-final-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    padding-top: 40px;
+    border-top: 1px solid rgba(245, 240, 232, 0.15);
+  }
+
+  .cta-final-body p {
+    font-size: 17px;
+    line-height: 1.65;
+    color: rgba(245, 240, 232, 0.85);
+    max-width: 50ch;
+  }
+
+  .cta-final .btn-primary {
+    background: var(--paper);
+    color: var(--ink);
+    border-color: var(--paper);
+  }
+
+  .cta-final .btn-primary:hover {
+    background: var(--paper-deep);
+    border-color: var(--paper-deep);
+  }
+
+  .cta-final .btn-ghost {
+    color: var(--paper);
+    border-color: rgba(245, 240, 232, 0.4);
+  }
+
+  .cta-final .btn-ghost:hover {
+    background: var(--paper);
+    color: var(--ink);
+    border-color: var(--paper);
+  }
+
+  @media (max-width: 860px) {
+    .cta-final-body { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  /* ========= FOOTER ========= */
+  footer {
+    background: var(--paper);
+    padding: 80px 0 40px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+  }
+
+  .footer-brand .brand {
+    font-size: 26px;
+  }
+
+  .footer-brand p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 38ch;
+    margin-top: 20px;
+  }
+
+  .footer-col h5 {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+  .footer-col ul {
+    list-style: none;
+  }
+
+  .footer-col ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  .footer-col ul li a:hover { color: var(--petrol); }
+
+  .footer-bottom {
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .footer-bottom .disclaimer {
+    max-width: 60ch;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 860px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ========= SCROLL REVEAL ========= */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ========= UTIL ========= */
+  ::selection {
+    background: var(--petrol);
+    color: var(--paper);
+  }
+
+  /* ========= WHATSAPP FLOAT ========= */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    background: #25D366;
+    color: white;
+    border-radius: 50px;
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  .whatsapp-float:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+    background: #1fb855;
+  }
+  .whatsapp-float svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+  @media (max-width: 600px) {
+    .whatsapp-float {
+      padding: 12px 16px;
+      font-size: 13px;
+      bottom: 16px;
+      right: 16px;
+    }
+    .whatsapp-float svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="brand">
+    Dr. Mauricio Vidal
+    <span>Nutrologia Clínica · CRM-SP 263079</span>
+  </div>
+  <div class="nav-links">
+    <a href="#manifesto">Filosofia</a>
+    <a href="#metodo">Método</a>
+    <a href="#artigos">Jornal</a>
+    <a href="#perguntas">Dúvidas</a>
+  </div>
+  <a href="#consulta" class="nav-cta">Quero entender meu caso</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">Medicina séria · Emagrecimento clínico</div>
+        <h1>
+          Para quem<br>
+          já <em>tentou de tudo</em><br>
+          e continua<br>
+          no <em>mesmo lugar</em>.
+        </h1>
+
+        <div class="hero-meta">
+          <div>
+            <p>
+              Consulta médica online focada em emagrecimento clínico individualizado. Sem dieta genérica. Sem promessa vazia. Sem protocolo pronto.
+            </p>
+            <p style="margin-top: 20px;">
+              Se você já fez dieta, já perdeu peso, já recuperou tudo de novo — o problema provavelmente nunca foi você. Foi o método. Aqui, o tratamento começa onde os outros falharam: na investigação do seu corpo.
+            </p>
+          </div>
+          <div class="credential">
+            Dr. Mauricio Vidal<br>
+            Médico · CRM-SP 263079<br>
+            Pós-graduação em Nutrologia<br>
+            São Paulo · Atendimento Online
+          </div>
+        </div>
+
+        <div class="hero-cta-row">
+          <a href="#consulta" class="btn btn-primary">
+            Quero entender meu caso
+            <span class="arrow">→</span>
+          </a>
+          <a href="#manifesto" class="btn btn-ghost">
+            Entender a abordagem
+          </a>
+        </div>
+
+        <p class="credential" style="font-size: 11px; line-height: 1.7; margin-top: 20px; max-width: 52ch;">
+          Atendimento com número limitado de pacientes por mês, para garantir acompanhamento próximo e individualizado.
+        </p>
+
+        <div class="hero-meta" style="margin-top: 56px;">
+          <div>
+            <p style="font-family: var(--display); font-weight: 300; font-size: 28px; line-height: 1.25; letter-spacing: -0.015em; margin-bottom: 20px;">
+              Você não precisa de mais uma dieta.<br>
+              <em style="color: var(--petrol); font-style: italic;">Precisa entender</em> por que seu corpo não responde.
+            </p>
+          </div>
+          <div>
+            <ul class="forwhom-list" style="list-style: none; padding: 0;">
+              <li style="font-size: 15px; line-height: 1.5; padding: 12px 0 12px 28px; position: relative; border-bottom: 1px solid var(--rule); color: var(--ink);">
+                <span style="position: absolute; left: 0; top: 12px; font-family: var(--display); font-style: italic; font-size: 16px; color: var(--petrol);">+</span>
+                Fome constante mesmo comendo certo
+              </li>
+              <li style="font-size: 15px; line-height: 1.5; padding: 12px 0 12px 28px; position: relative; border-bottom: 1px solid var(--rule); color: var(--ink);">
+                <span style="position: absolute; left: 0; top: 12px; font-family: var(--display); font-style: italic; font-size: 16px; color: var(--petrol);">+</span>
+                Cansaço diário sem explicação
+              </li>
+              <li style="font-size: 15px; line-height: 1.5; padding: 12px 0 12px 28px; position: relative; border-bottom: 1px solid var(--rule); color: var(--ink);">
+                <span style="position: absolute; left: 0; top: 12px; font-family: var(--display); font-style: italic; font-size: 16px; color: var(--petrol);">+</span>
+                Peso que sobe rápido e desce devagar
+              </li>
+              <li style="font-size: 15px; line-height: 1.5; padding: 12px 0 12px 28px; position: relative; color: var(--ink);">
+                <span style="position: absolute; left: 0; top: 12px; font-family: var(--display); font-style: italic; font-size: 16px; color: var(--petrol);">+</span>
+                Efeito sanfona há anos
+              </li>
+            </ul>
+            <p style="margin-top: 24px; font-size: 15px; line-height: 1.6; color: var(--muted); font-style: italic; font-family: var(--display); font-weight: 300;">
+              Se você se reconhece nisso, faz sentido investigar — não insistir no erro.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Investigação antes de prescrição</span>
+    <span>Cada caso é um caso</span>
+    <span>Método, não milagre</span>
+    <span>Ciência aplicada ao paciente</span>
+    <span>Investigação antes de prescrição</span>
+    <span>Cada caso é um caso</span>
+    <span>Método, não milagre</span>
+    <span>Ciência aplicada ao paciente</span>
+  </div>
+</div>
+
+<!-- ============ MANIFESTO ============ -->
+<section id="manifesto" class="manifesto">
+  <div class="container">
+    <div class="section-label reveal">
+      <span class="num">01</span>
+      Filosofia
+    </div>
+
+    <div class="manifesto-grid">
+      <div class="manifesto-lead reveal">
+        <h2 class="section-title">
+          O que penso<br>
+          sobre <em>emagrecer</em>.
+        </h2>
+      </div>
+
+      <div class="manifesto-body reveal">
+        <p>
+          Emagrecer <em>não é uma questão de força de vontade.</em> Quem pensa assim provavelmente ainda não emagreceu de verdade — ou emagreceu e engordou tudo de volta.
+        </p>
+        <p>
+          Meu trabalho começa onde a maioria dos tratamentos termina: <strong>na investigação.</strong> Antes de propor qualquer coisa, eu quero entender por que <em>o seu corpo específico</em> está onde está.
+        </p>
+        <p>
+          Hormônios, insulina, tireoide, sono, intestino, histórico medicamentoso, composição corporal, rotina real. Tudo isso muda completamente o que vai funcionar para você.
+        </p>
+        <p>
+          Não trabalho com promessa de quilos em X semanas. Trabalho com <em>método</em>. Quem busca milagre encontra facilmente em outro lugar. Quem busca tratamento, pode me chamar.
+        </p>
+
+        <div class="signature">
+          <div class="signature-name">Dr. Mauricio Vidal</div>
+          <div class="signature-role">Médico · Pós-graduado em Nutrologia</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pillars-grid" style="margin-top: 120px;">
+      <div class="pillar reveal">
+        <span class="pillar-num">i.</span>
+        <h3>Raciocínio clínico antes de conduta</h3>
+        <p>Balança travada, fome constante, cansaço crônico — nada disso é aleatório. Cada sintoma tem causa fisiológica investigável. É ali que começo.</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="pillar-num">ii.</span>
+        <h3>Individualização real, não retórica</h3>
+        <p>Dois pacientes com o mesmo peso podem precisar de estratégias opostas. Genética, idade, hormônios, rotina e histórico determinam o caminho — não um protocolo único.</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="pillar-num">iii.</span>
+        <h3>Ciência, sem atalhos</h3>
+        <p>Sem dieta da moda, sem suplemento milagroso, sem Ozempic como resposta automática. Medicação é ferramenta quando há indicação clínica, nunca ponto de partida.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOR WHOM ============ -->
+<section class="for-whom">
+  <div class="container">
+    <div class="section-label reveal">
+      <span class="num">02</span>
+      Quem atendo
+    </div>
+
+    <h2 class="section-title reveal">
+      Nem todo paciente<br>
+      é para <em>mim</em>.
+    </h2>
+
+    <div class="forwhom-grid">
+      <div class="forwhom-col yes reveal">
+        <h4>Para você, se</h4>
+        <ul class="forwhom-list">
+          <li>Já tentou várias dietas e sempre recuperou o peso.</li>
+          <li>Vive com efeito sanfona há mais de 2 anos.</li>
+          <li>Sente fome constante, mesmo comendo "certo".</li>
+          <li>Acorda cansado e sem energia para o dia.</li>
+          <li>Tem compulsão alimentar, especialmente à noite.</li>
+          <li>Suspeita de resistência à insulina ou alteração hormonal.</li>
+          <li>Quer entender o próprio corpo, não só receber dieta.</li>
+          <li>Busca tratamento com método e acompanhamento próximo.</li>
+        </ul>
+      </div>
+      <div class="forwhom-col no reveal">
+        <h4>Não para você, se</h4>
+        <ul class="forwhom-list">
+          <li>Procura perder 10 kg em 30 dias.</li>
+          <li>Quer Ozempic ou Mounjaro sem investigação prévia.</li>
+          <li>Busca dieta pronta para copiar e seguir sozinho.</li>
+          <li>Não aceita fazer exames laboratoriais mínimos.</li>
+          <li>Não tem disposição para retornos ao longo do tratamento.</li>
+          <li>Espera resultado sem ajustar sono, estresse e rotina.</li>
+          <li>Procura cirurgia bariátrica imediata como único caminho.</li>
+          <li>Quer promessa de prazo fixo e garantia de resultado.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ METHOD ============ -->
+<section id="metodo">
+  <div class="container">
+    <div class="section-label reveal">
+      <span class="num">03</span>
+      Como funciona
+    </div>
+
+    <h2 class="section-title reveal">
+      O método<br>
+      em <em>cinco etapas</em>.
+    </h2>
+
+    <div class="method-intro reveal">
+      <p>Tratamento médico de emagrecimento não é pesar, prescrever e mandar embora. É um processo investigativo que segue uma lógica clínica clara — aplicada com consistência.</p>
+    </div>
+
+    <div class="method-steps">
+      <div class="method-step reveal">
+        <div class="method-step-num">I</div>
+        <h3>Consulta inicial estendida</h3>
+        <div class="method-step-body">
+          <p>Conversa longa (cerca de 60 a 90 minutos) para entender quem é a pessoa por trás da queixa: histórico pessoal e familiar, alimentação real, sono, intestino, humor, medicações em uso, tentativas anteriores, rotina concreta.</p>
+          <ul>
+            <li>Anamnese nutrológica completa</li>
+            <li>Avaliação de sinais clínicos e antropometria</li>
+            <li>Escuta dos padrões alimentares reais (não os idealizados)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="method-step reveal">
+        <div class="method-step-num">II</div>
+        <h3>Solicitação e leitura de exames</h3>
+        <div class="method-step-body">
+          <p>Painel laboratorial dirigido ao que a história clínica sugere. Não é "bateria genérica" — é investigação com hipótese. Incluo o que a maioria esquece: insulina de jejum, cálculo do HOMA-IR, perfil tireoidiano completo, ferritina, vitaminas do complexo B, 25-OH vitamina D, quando indicado.</p>
+          <ul>
+            <li>Investigação de resistência à insulina</li>
+            <li>Avaliação hormonal orientada</li>
+            <li>Rastreio de carências micronutricionais</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="method-step reveal">
+        <div class="method-step-num">III</div>
+        <h3>Diagnóstico e estratégia individualizada</h3>
+        <div class="method-step-body">
+          <p>Com exames interpretados e história clínica consolidada, desenho uma estratégia pensada para o seu caso. Aqui se discute, quando houver indicação, o papel de medicação. Sempre com critério, sempre com explicação do porquê.</p>
+          <ul>
+            <li>Plano alimentar individualizado com lógica explicada</li>
+            <li>Ajustes de sono, atividade e comportamento alimentar</li>
+            <li>Prescrição medicamentosa apenas com indicação clínica</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="method-step reveal">
+        <div class="method-step-num">IV</div>
+        <h3>Retornos próximos e ajustes finos</h3>
+        <div class="method-step-body">
+          <p>Emagrecimento real se faz em retornos. Os primeiros meses têm consultas a cada 30 dias para ajustar o que não está funcionando e reforçar o que está. Nenhum corpo responde linearmente — e o tratamento precisa acompanhar essa realidade.</p>
+          <ul>
+            <li>Revisão de composição corporal, não só peso</li>
+            <li>Ajustes conforme resposta individual</li>
+            <li>Canal direto para dúvidas entre consultas</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="method-step reveal">
+        <div class="method-step-num">V</div>
+        <h3>Manutenção consciente</h3>
+        <div class="method-step-body">
+          <p>Emagrecer é fase; manter é o resto da vida. Ao estabilizar o novo peso e padrão metabólico, a consulta passa a ser trimestral ou semestral — focada em preservar massa muscular, proteger metabolismo e prevenir o efeito sanfona que destruiu tentativas anteriores.</p>
+          <ul>
+            <li>Reavaliação periódica de composição corporal e exames</li>
+            <li>Ajustes proativos antes da recidiva</li>
+            <li>Tratamento pensado para durar, não para recair</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOURNAL / ARTICLES ============ -->
+<section id="artigos" class="journal">
+  <div class="container">
+    <div class="section-label reveal">
+      <span class="num">04</span>
+      Jornal clínico
+    </div>
+
+    <div class="journal-head">
+      <h2 class="section-title reveal">
+        Leituras<br>
+        que mudam<br>
+        <em>a forma de pensar</em>.
+      </h2>
+      <p class="reveal">Textos curtos, diretos e com base médica sobre os porquês do seu emagrecimento ter travado. Sem dicas genéricas, sem clichês de internet. Apenas o que deveria ter sido explicado antes.</p>
+    </div>
+
+    <div class="articles-grid" id="articlesGrid">
+
+      <article class="article" data-article="1">
+        <div class="article-meta">
+          <span class="article-cat">Resistência à Insulina</span>
+          <span>06 min de leitura</span>
+        </div>
+        <h3>Por que você sente <em>fome</em> duas horas depois de comer.</h3>
+        <p class="article-excerpt">Se a comida acabou de passar e o estômago já está pedindo mais, o problema raramente é gula. Quase sempre é um sinal bioquímico ignorado há anos.</p>
+        <span class="article-more">Ler artigo <span class="arrow">→</span></span>
+      </article>
+
+      <article class="article" data-article="2">
+        <div class="article-meta">
+          <span class="article-cat">Metabolismo</span>
+          <span>05 min de leitura</span>
+        </div>
+        <h3>Por que a balança <em>trava</em> mesmo na dieta.</h3>
+        <p class="article-excerpt">Você cortou calorias, cortou carboidrato, cortou tudo. E mesmo assim não emagrece. Existe um motivo médico — e ele não se resolve cortando mais.</p>
+        <span class="article-more">Ler artigo <span class="arrow">→</span></span>
+      </article>
+
+      <article class="article" data-article="3">
+        <div class="article-meta">
+          <span class="article-cat">Hormônios</span>
+          <span>07 min de leitura</span>
+        </div>
+        <h3>O cansaço crônico <em>não é frescura</em>.</h3>
+        <p class="article-excerpt">Acordar exausto é sintoma, não personalidade. E quase sempre está ligado ao mesmo desequilíbrio que impede seu emagrecimento.</p>
+        <span class="article-more">Ler artigo <span class="arrow">→</span></span>
+      </article>
+
+      <article class="article" data-article="4">
+        <div class="article-meta">
+          <span class="article-cat">Exames</span>
+          <span>06 min de leitura</span>
+        </div>
+        <h3>O exame que quase ninguém <em>pede</em>.</h3>
+        <p class="article-excerpt">Glicemia normal não significa insulina normal. E essa diferença pode ser a razão de tudo. Entenda por que a insulina de jejum muda o jogo.</p>
+        <span class="article-more">Ler artigo <span class="arrow">→</span></span>
+      </article>
+
+      <article class="article" data-article="5">
+        <div class="article-meta">
+          <span class="article-cat">Comportamento</span>
+          <span>05 min de leitura</span>
+        </div>
+        <h3>Compulsão alimentar <em>não é fraqueza</em>.</h3>
+        <p class="article-excerpt">Comer escondido, comer além da fome, se odiar depois. Tudo isso tem causa clínica investigável. Tratar com mais culpa é o que mantém o ciclo.</p>
+        <span class="article-more">Ler artigo <span class="arrow">→</span></span>
+      </article>
+
+      <article class="article" data-article="6">
+        <div class="article-meta">
+          <span class="article-cat">Medicação</span>
+          <span>08 min de leitura</span>
+        </div>
+        <h3>Ozempic, Mounjaro e o <em>mito da injeção milagrosa</em>.</h3>
+        <p class="article-excerpt">Medicação bem indicada transforma. Mal indicada, atrasa o paciente e cria dependência. O que ninguém está te contando sobre análogos de GLP-1.</p>
+        <span class="article-more">Ler artigo <span class="arrow">→</span></span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="perguntas">
+  <div class="container">
+    <div class="section-label reveal">
+      <span class="num">05</span>
+      Dúvidas frequentes
+    </div>
+
+    <div class="faq-head">
+      <h2 class="section-title reveal">
+        Antes que<br>
+        você <em>pergunte</em>.
+      </h2>
+      <p class="reveal">As dúvidas mais comuns antes da primeira consulta, respondidas com a mesma clareza com que seriam respondidas no consultório.</p>
+    </div>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Consulta online funciona mesmo para emagrecimento?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Sim — e em muitos casos funciona melhor. Emagrecimento clínico não depende de exame físico presencial rotineiro. Depende de <em>escuta aprofundada, leitura criteriosa de exames e retornos consistentes</em>. Tudo isso é realizado com qualidade igual ou superior no formato online, sem desgaste de deslocamento.</p>
+            <p>A avaliação de composição corporal, quando necessária, pode ser feita com bioimpedância domiciliar, fita métrica orientada ou em clínica parceira da sua cidade, com envio dos resultados.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Você vai me prescrever Ozempic de cara?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Não. Medicação é <em>ferramenta</em>, não produto. Na maioria dos casos, nem sequer há indicação para análogos de GLP-1 logo de início. Primeiro vem investigação, diagnóstico e correção das causas metabólicas subjacentes.</p>
+            <p>Quando há indicação clínica precisa para medicação — incluindo semaglutida, tirzepatida ou outras classes — ela é discutida com transparência, explicando riscos, benefícios, alternativas e expectativas realistas. Prescrição sem critério não é tratamento; é comércio.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Quanto tempo leva para eu começar a emagrecer?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Prometo método, não prazo. Cada corpo responde de forma diferente, e garantir data específica seria desonestidade. O que posso afirmar é que, corrigidas as causas (insulina, sono, padrão alimentar, hormônios), o corpo <em>responde</em> — com consistência, sem efeito sanfona.</p>
+            <p>Em média, os pacientes observam melhora significativa de energia e saciedade nas primeiras semanas; mudanças de composição corporal tornam-se claras entre o segundo e o terceiro mês de tratamento bem conduzido.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Quais exames preciso ter antes da consulta?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Na primeira consulta, você traz os exames que já tem (dos últimos 12 meses). A partir dessa primeira avaliação, solicito os exames específicos que o seu caso pede. Não é bateria genérica — é <em>investigação dirigida</em>.</p>
+            <p>Isso geralmente inclui: hemograma, perfil lipídico, glicemia, insulina de jejum, HOMA-IR, TSH e T4 livre, ferritina, 25-OH vitamina D, vitamina B12, ácido úrico, função hepática e renal. Casos específicos podem requerer avaliações adicionais.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Nutrólogo é a mesma coisa que nutricionista?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Não — e entender a diferença muda seu tratamento. Nutrólogo é <em>médico</em>, formado em Medicina, com pós-graduação em Nutrologia. Investiga causas, solicita e interpreta exames, diagnostica doenças metabólicas e prescreve medicação quando indicada.</p>
+            <p>Nutricionista é profissional de saúde com formação específica em Nutrição, excelente em planejamento alimentar detalhado e acompanhamento de padrões de consumo. Não são concorrentes: são <em>complementares</em>. Em casos complexos, os dois profissionais trabalhando juntos costumam oferecer o melhor resultado.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Meu caso é diferente. Será que funciona comigo?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Todo paciente que chega depois de várias tentativas acredita ter o caso mais difícil. E está <em>parcialmente certo</em> — cada caso é único. Mas único não é insolúvel: é exatamente o que justifica tratamento individualizado.</p>
+            <p>Quando um caso parece sem solução, geralmente é porque só foram oferecidas soluções genéricas. Se você traz histórico de tentativas frustradas, isso não é desvantagem na primeira consulta: é <em>informação clínica valiosa</em> sobre o que já falhou e por quê.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Como é o acompanhamento entre as consultas?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Os pacientes em tratamento têm canal direto para dúvidas pontuais entre consultas, dentro de horários e escopo combinados. Isso evita aquela sensação comum de <em>"não posso esperar um mês para tirar essa dúvida"</em> que desorganiza o tratamento.</p>
+            <p>Os retornos são agendados com frequência adaptada à fase do tratamento — mais próximos no início, mais espaçados na manutenção.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Qual o investimento?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Os valores e formatos de acompanhamento (consulta avulsa ou pacote de seguimento) são informados diretamente pela nossa secretaria, conforme disponibilidade de agenda e modalidade escolhida.</p>
+            <p>Entre em contato pelo WhatsApp ou pelo formulário desta página para receber as informações completas sobre valores, formas de pagamento e próximas datas disponíveis.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section id="consulta" class="cta-final">
+  <div class="container">
+    <div class="section-label reveal">
+      <span class="num">06</span>
+      Primeira consulta
+    </div>
+
+    <h2 class="reveal">
+      Você pode<br>
+      <em>continuar tentando</em><br>
+      sozinho. Ou pode<br>
+      <em>finalmente entender</em><br>
+      o que está travando.
+    </h2>
+
+    <div class="cta-final-body">
+      <p class="reveal">A decisão muda os próximos anos da sua vida — não só os próximos meses. Não é mais esforço que falta. É método construído a partir do seu corpo, da sua história e dos seus exames.</p>
+      <div class="reveal">
+        <div class="hero-cta-row" style="margin-top: 0;">
+          <a href="https://wa.me/5511950792425?text=Olá,%20Dr.%20Mauricio.%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" class="btn btn-primary">
+            Quero entender meu caso
+            <span class="arrow">→</span>
+          </a>
+          <a href="mailto:mauriciovidal47@gmail.com?subject=Agendamento%20de%20consulta" class="btn btn-ghost">
+            Prefiro por e-mail
+          </a>
+        </div>
+        <p style="font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245, 240, 232, 0.5); margin-top: 24px; font-weight: 500; line-height: 1.7;">
+          Atendimento com número limitado de pacientes por mês, para garantir acompanhamento próximo.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          Dr. Mauricio Vidal
+          <span>Nutrologia Clínica · CRM-SP 263079</span>
+        </div>
+        <p>Consulta médica online de emagrecimento baseada em investigação individualizada. Para quem busca tratamento, não mais uma tentativa.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navegação</h5>
+        <ul>
+          <li><a href="#manifesto">Filosofia</a></li>
+          <li><a href="#metodo">Método</a></li>
+          <li><a href="#artigos">Jornal</a></li>
+          <li><a href="#perguntas">Dúvidas</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contato</h5>
+        <ul>
+          <li><a href="https://wa.me/5511950792425" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="mailto:mauriciovidal47@gmail.com">E-mail</a></li>
+          <li><a href="https://instagram.com/drmauriciovidal" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Atendimento</h5>
+        <ul>
+          <li>Consultas online</li>
+          <li>Seg a sáb · 08h–20h</li>
+          <li>São Paulo · Brasil</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="disclaimer">
+        © 2026 Dr. Mauricio Vidal. Todas as informações deste site têm caráter educativo e não substituem consulta médica individual. O conteúdo aqui publicado não estabelece relação médico-paciente. CRM-SP 263079.
+      </div>
+      <div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ ARTICLE CONTENT TEMPLATES ============ -->
+<template id="article-content-1">
+  <div class="full-body">
+    <p>Se você sente fome duas horas depois de comer, o problema não é gula. É <em>bioquímica</em>. E a responsável, na maioria dos casos, tem nome: insulina.</p>
+    <h4>O que acontece quando você come</h4>
+    <p>Toda refeição — principalmente as que contêm carboidrato — eleva sua glicemia. Em resposta, o pâncreas libera insulina, hormônio que "abre as portas" das células para que o açúcar saia do sangue e vire energia ou estoque.</p>
+    <p>Até aqui, fisiologia normal. O problema começa quando esse mecanismo fica <strong>desregulado</strong>.</p>
+    <h4>O ciclo da fome em duas horas</h4>
+    <p>Com o tempo, células ficam menos sensíveis à insulina — o que chamamos de <em>resistência à insulina</em>. O pâncreas, para compensar, libera cada vez mais insulina. Resultado: sua glicemia sobe rápido demais após a refeição, despenca abruptamente, e seu cérebro interpreta essa queda como emergência. Pede comida. De novo.</p>
+    <p>Não é fraqueza. É um sistema desregulado pedindo socorro.</p>
+    <h4>Como saber se é o seu caso</h4>
+    <p>O exame-chave é simples e quase nunca é pedido: <strong>insulina de jejum com cálculo do HOMA-IR</strong>. Glicemia normal não exclui resistência à insulina — ela pode estar "normal" exatamente porque o pâncreas está trabalhando dobrado para mantê-la assim.</p>
+    <p>Tratar a causa, não o sintoma, é o que muda o jogo. E tratar a causa exige, antes de tudo, <em>investigação</em>.</p>
+  </div>
+</template>
+
+<template id="article-content-2">
+  <div class="full-body">
+    <p>Você cortou calorias. Cortou carboidrato. Cortou o jantar. Começou a treinar. E a balança, como se tivesse vontade própria, <em>não se move</em>.</p>
+    <h4>O equívoco da equação simples</h4>
+    <p>Por décadas, repetiu-se que emagrecer era "calorias que entram menos calorias que saem". A frase não está errada — mas está <strong>incompleta</strong>. Seu corpo não é uma planilha. Ele é um sistema hormonal adaptativo.</p>
+    <p>Quando você restringe calorias bruscamente, ele entende como ameaça e ativa mecanismos de defesa: metabolismo desacelera, massa muscular é sacrificada primeiro que gordura, hormônios da fome sobem, hormônios da saciedade caem.</p>
+    <h4>O papel silencioso da insulina</h4>
+    <p>Em paralelo, se há resistência à insulina, seu corpo vive em modo <em>estoque</em>. Mesmo comendo pouco, ele segura o que pode. Você emagrece abaixo do esperado, ou simplesmente não emagrece.</p>
+    <h4>O que resolve</h4>
+    <p>Não é cortar mais. É <strong>investigar</strong> o que está travado e tratar. Pode ser resistência à insulina, pode ser tireoide, pode ser sono ruim, pode ser dieta restritiva demais por tempo demais. Cada causa pede estratégia diferente.</p>
+    <p>Emagrecimento travado não é sinal de que você precisa de mais força de vontade. É sinal de que você precisa de mais <em>informação clínica</em>.</p>
+  </div>
+</template>
+
+<template id="article-content-3">
+  <div class="full-body">
+    <p>Você acorda cansado. Chega no meio da tarde arrastado. Dorme mal. Acha que é idade, é rotina, é filho pequeno, é trabalho.</p>
+    <p>Pode ser. Mas na maioria dos casos, é <em>sintoma clínico</em> — e o mesmo desequilíbrio que te deixa exausto é o que impede seu emagrecimento.</p>
+    <h4>As causas mais comuns (e investigáveis)</h4>
+    <p><strong>Tireoide:</strong> hipotireoidismo subclínico é subdiagnosticado. TSH dentro da faixa "normal" ampla não exclui disfunção funcional.</p>
+    <p><strong>Ferritina baixa:</strong> reserva de ferro inadequada causa cansaço crônico antes mesmo de surgir anemia visível no hemograma.</p>
+    <p><strong>Deficiência de vitamina D e B12:</strong> extremamente comuns, impactam energia, humor e metabolismo.</p>
+    <p><strong>Apneia do sono:</strong> você pode dormir 8 horas e acordar exausto porque não dorme de verdade.</p>
+    <p><strong>Resistência à insulina:</strong> sim, ela aparece aqui também. Glicemia instável = energia instável ao longo do dia.</p>
+    <h4>Por que isso importa para emagrecer</h4>
+    <p>Cansaço crônico é o maior sabotador silencioso de qualquer tratamento. Sem energia, <em>nada</em> funciona — não há adesão à rotina, não há treino produtivo, não há escolhas alimentares inteligentes. O corpo em modo sobrevivência não emagrece. Ele estoca.</p>
+    <p>Tratar emagrecimento sem investigar cansaço é remendar um buraco no fundo do barco enquanto você tira água com balde.</p>
+  </div>
+</template>
+
+<template id="article-content-4">
+  <div class="full-body">
+    <p>Existe um exame laboratorial simples, barato e amplamente disponível que muda completamente a abordagem do emagrecimento. E quase ninguém pede.</p>
+    <h4>Insulina de jejum e HOMA-IR</h4>
+    <p>A <strong>insulina de jejum</strong> mede quanto desse hormônio circula no seu sangue em jejum. O <strong>HOMA-IR</strong> é um cálculo simples que combina glicemia de jejum e insulina de jejum para estimar seu grau de resistência à insulina.</p>
+    <h4>Por que glicemia normal não basta</h4>
+    <p>Sua glicemia pode estar "normal" no exame — e ainda assim você estar com resistência à insulina avançada. Isso acontece porque o pâncreas compensa o problema jogando cada vez mais insulina na circulação para <em>manter</em> essa glicemia normal.</p>
+    <p>É como um motorista acelerando cada vez mais para manter o carro na velocidade de cruzeiro em subida. Visto de fora, nada parece errado. Internamente, o sistema está no limite.</p>
+    <h4>O que os números dizem</h4>
+    <p>Interpretação exige contexto clínico, mas como regra ampla: insulina de jejum acima de 10 µU/mL ou HOMA-IR acima de 2,5 já sugerem alterações que merecem atenção — e, muitas vezes, explicam anos de fracasso em dietas.</p>
+    <h4>Por que isso raramente é pedido</h4>
+    <p>Não está nos "check-ups padrão" da maioria dos convênios. Não é obrigatório em consultas generalistas. E muitos médicos ainda seguem protocolos onde a insulina só entra em pauta depois que o diabetes está instalado.</p>
+    <p>Em medicina preventiva e nutrológica, no entanto, esse exame é <em>central</em>.</p>
+  </div>
+</template>
+
+<template id="article-content-5">
+  <div class="full-body">
+    <p>Comer escondido. Comer até passar mal. Comer sem fome. Se odiar depois. Prometer que amanhã será diferente. Amanhã, repetir tudo.</p>
+    <p>Se isso faz parte da sua vida, você não é fraco. Você está com um <em>sistema desregulado</em> pedindo socorro de uma forma que ninguém te ensinou a interpretar.</p>
+    <h4>Compulsão não é personalidade</h4>
+    <p>A compulsão alimentar é um fenômeno com raízes neurológicas, hormonais e comportamentais. Não é questão de caráter. Pacientes absolutamente disciplinados em todas as outras áreas da vida podem ter compulsão — porque compulsão não é falha de disciplina.</p>
+    <h4>O que costuma estar por trás</h4>
+    <p><strong>Restrição excessiva:</strong> dietas muito restritivas criam o ciclo clássico de restrição-explosão. O corpo entende a restrição como ameaça e gatilha compulsão como defesa.</p>
+    <p><strong>Desregulação dopaminérgica:</strong> quando o cérebro não encontra prazer suficiente em outras áreas da vida, comida vira fonte principal. A compulsão é muitas vezes um sintoma de <em>fome de outra coisa</em>.</p>
+    <p><strong>Insulina e açúcar:</strong> picos e quedas de glicemia gatilham episódios de compulsão de forma previsível — especialmente à tarde e à noite.</p>
+    <p><strong>Sono ruim e estresse crônico:</strong> ambos alteram hormônios da fome (grelina, leptina) e aumentam impulsividade alimentar.</p>
+    <h4>Tratar com mais culpa piora</h4>
+    <p>O instinto é impor mais regras, mais restrição, mais controle. Isso alimenta o ciclo. Tratamento real começa por <em>entender</em> o que está desregulado, corrigir as causas fisiológicas e, paralelamente, reconstruir a relação com a comida em vez de policiá-la.</p>
+  </div>
+</template>
+
+<template id="article-content-6">
+  <div class="full-body">
+    <p>Ozempic. Wegovy. Mounjaro. Saxenda. Os análogos de GLP-1 (e agora duplos agonistas GLP-1/GIP) são, sem dúvida, <em>uma das maiores revoluções recentes no tratamento da obesidade</em>.</p>
+    <p>E, ao mesmo tempo, um dos maiores equívocos recentes da medicina comercial.</p>
+    <h4>O que essas medicações fazem (bem)</h4>
+    <p>Elas mimetizam hormônios intestinais que sinalizam saciedade ao cérebro e retardam o esvaziamento gástrico. Em pacientes com indicação correta, promovem perda de peso significativa, melhoram controle glicêmico, reduzem risco cardiovascular e, em muitos casos, <strong>transformam a vida clínica</strong> de quem vivia com obesidade grave ou diabetes descompensado.</p>
+    <h4>O que o marketing não conta</h4>
+    <p>Medicação é <em>ferramenta</em>, não substituto de tratamento. Prescrita sem investigação, sem mudança de hábitos, sem correção de causas subjacentes, ela funciona no curto prazo — e revela seus problemas depois.</p>
+    <p><strong>Perda acentuada de massa muscular:</strong> sem estratégia nutricional e atividade física adequadas, uma parcela significativa do peso perdido é músculo, não gordura. Metabolismo desaba no longo prazo.</p>
+    <p><strong>Efeito rebote ao suspender:</strong> pacientes que suspendem sem transição adequada e sem hábitos consolidados frequentemente recuperam o peso perdido — às vezes com juros.</p>
+    <p><strong>Uso cosmético em não-indicados:</strong> prescrições para pacientes sem obesidade nem resistência à insulina relevante, apenas com objetivos estéticos, trocam uma situação menor por riscos maiores.</p>
+    <h4>A regra simples</h4>
+    <p>Quem trata emagrecimento <em>sério</em> não começa pela injeção. Começa pelo paciente. Medicação entra quando há indicação clínica, contexto adequado e estratégia para o que vem depois dela.</p>
+    <p>Medicação é parte do tratamento — não o tratamento inteiro.</p>
+  </div>
+</template>
+
+<!-- ============ WHATSAPP FLOAT ============ -->
+<a href="https://wa.me/5511950792425?text=Olá,%20Dr.%20Mauricio.%20Gostaria%20de%20agendar%20uma%20consulta."
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener"
+   aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  WhatsApp
+</a>
+
+<script>
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Article expand
+  const grid = document.getElementById('articlesGrid');
+  let openArticleEl = null;
+
+  grid.addEventListener('click', (e) => {
+    const card = e.target.closest('.article');
+    if (!card) return;
+    const id = card.dataset.article;
+    const tpl = document.getElementById('article-content-' + id);
+    if (!tpl) return;
+
+    // Close previously open
+    if (openArticleEl) {
+      openArticleEl.remove();
+      openArticleEl = null;
+    }
+
+    // Build expanded block
+    const wrap = document.createElement('div');
+    wrap.className = 'article article-full open';
+    wrap.style.gridColumn = '1 / -1';
+
+    // Replicate header of the card
+    const meta = card.querySelector('.article-meta').cloneNode(true);
+    const title = card.querySelector('h3').cloneNode(true);
+
+    wrap.appendChild(meta);
+    wrap.appendChild(title);
+    wrap.appendChild(tpl.content.cloneNode(true));
+
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'close-btn';
+    closeBtn.textContent = '— Fechar artigo';
+    closeBtn.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      wrap.remove();
+      openArticleEl = null;
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+    wrap.appendChild(closeBtn);
+
+    // Insert after the clicked card, spanning both columns
+    card.insertAdjacentElement('afterend', wrap);
+    openArticleEl = wrap;
+
+    // Smooth scroll to expanded
+    setTimeout(() => {
+      wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>

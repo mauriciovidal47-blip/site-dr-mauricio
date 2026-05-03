@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Triagem Clínica | Dr. Mauricio Vidal</title>
+<meta name="description" content="Formulário de triagem pré-consulta. Cerca de 4 minutos. Suas respostas chegam diretamente ao Dr. Mauricio antes do agendamento.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0A0A0A;
+    --paper: #F5F0E8;
+    --paper-deep: #E8DFD3;
+    --petrol: #1B3A4B;
+    --petrol-deep: #0E2632;
+    --white: #FFFFFF;
+    --rule: rgba(10, 10, 10, 0.12);
+    --muted: rgba(10, 10, 10, 0.6);
+    --error: #A03030;
+    --display: "Fraunces", Georgia, serif;
+    --sans: "Geist", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    pointer-events: none;
+    z-index: 100;
+    mix-blend-mode: multiply;
+    opacity: 0.5;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .container {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  @media (max-width: 720px) {
+    .container { padding: 0 20px; }
+  }
+
+  /* ======= HEADER ======= */
+  header.page-header {
+    padding: 32px 0;
+    border-bottom: 1px solid var(--rule);
+    background: rgba(237, 227, 214, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  header.page-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .brand {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    font-style: italic;
+  }
+
+  .brand span {
+    font-style: normal;
+    font-weight: 400;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: block;
+    margin-top: 2px;
+  }
+
+  .back-link {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover { color: var(--ink); }
+
+  /* ======= HERO ======= */
+  .intro {
+    padding: 80px 0 40px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 40px;
+    height: 1px;
+    background: var(--ink);
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    margin-bottom: 32px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--petrol);
+  }
+
+  .intro-text {
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 60ch;
+  }
+
+  .intro-text em { font-style: italic; color: var(--petrol); }
+
+  .meta-notes {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .meta-notes .note {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    line-height: 1.7;
+  }
+
+  .meta-notes .note strong {
+    display: block;
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--ink);
+    text-transform: none;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+
+  @media (max-width: 600px) {
+    .meta-notes {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+
+  /* ======= PROGRESS ======= */
+  .progress-wrap {
+    position: sticky;
+    top: 0;
+    background: rgba(237, 227, 214, 0.96);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 20px 0;
+    z-index: 40;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .progress-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .progress-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .progress-label span {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .progress-bar {
+    flex: 1;
+    height: 2px;
+    background: var(--rule);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--petrol);
+    width: 0%;
+    transition: width 0.5s ease;
+  }
+
+  /* ======= FORM ======= */
+  form {
+    padding: 40px 0 120px;
+  }
+
+  .step {
+    display: none;
+    animation: fadeUp 0.5s ease;
+  }
+
+  .step.active { display: block; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .step-number {
+    font-family: var(--display);
+    font-weight: 300;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--petrol);
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .step h2 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(30px, 4.5vw, 44px);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    margin-bottom: 16px;
+  }
+
+  .step h2 em { font-style: italic; color: var(--petrol); }
+
+  .step-description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--muted);
+    margin-bottom: 40px;
+    max-width: 52ch;
+  }
+
+  /* --- Form elements --- */
+  .field { margin-bottom: 28px; }
+
+  .field label.field-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+
+  .field label.field-label .req {
+    color: var(--petrol);
+    font-family: var(--display);
+    font-style: italic;
+  }
+
+  .field label.field-label .optional {
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    margin-left: 8px;
+  }
+
+  .field-hint {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 6px;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="date"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    font-family: var(--sans);
+    font-size: 15px;
+    color: var(--ink);
+    transition: border-color 0.2s, background 0.2s;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: var(--petrol);
+    background: var(--paper);
+  }
+
+  select {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%230A0A0A' opacity='0.5'><path d='M7 7l3 3 3-3'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 40px;
+    cursor: pointer;
+  }
+
+  textarea {
+    min-height: 100px;
+    resize: vertical;
+    font-family: var(--sans);
+    line-height: 1.5;
+  }
+
+  /* Radio / Checkbox cards */
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+  }
+
+  .options-grid.single-col { grid-template-columns: 1fr; }
+  .options-grid.two-col { grid-template-columns: repeat(2, 1fr); }
+
+  @media (max-width: 500px) {
+    .options-grid.two-col { grid-template-columns: 1fr; }
+  }
+
+  .option {
+    position: relative;
+  }
+
+  .option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .option label {
+    display: block;
+    padding: 14px 18px;
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    line-height: 1.4;
+    user-select: none;
+  }
+
+  .option label:hover {
+    border-color: var(--petrol);
+    background: var(--paper);
+  }
+
+  .option input:checked + label {
+    background: var(--petrol);
+    color: var(--paper);
+    border-color: var(--petrol);
+  }
+
+  .option input:focus-visible + label {
+    outline: 2px solid var(--petrol);
+    outline-offset: 2px;
+  }
+
+  /* Scale (1-5) */
+  .scale-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .scale-row .option label {
+    padding: 18px 0;
+    text-align: center;
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 22px;
+  }
+
+  .scale-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* Two-column row (weight, height) */
+  .row-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  @media (max-width: 500px) {
+    .row-two { grid-template-columns: 1fr; }
+  }
+
+  /* Nav buttons */
+  .step-nav {
+    margin-top: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 28px;
+    border-radius: 2px;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid var(--ink);
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--sans);
+  }
+
+  .btn:hover {
+    background: var(--petrol);
+    border-color: var(--petrol);
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--rule);
+  }
+
+  .btn-ghost:hover {
+    background: var(--paper-deep);
+    border-color: var(--ink);
+    color: var(--ink);
+    transform: none;
+  }
+
+  .btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+
+  /* Error */
+  .field.has-error input,
+  .field.has-error select,
+  .field.has-error textarea {
+    border-color: var(--error);
+  }
+
+  .field-error {
+    display: none;
+    color: var(--error);
+    font-size: 12px;
+    margin-top: 6px;
+    font-style: italic;
+  }
+
+  .field.has-error .field-error { display: block; }
+
+  /* --- Success --- */
+  .success {
+    display: none;
+    padding: 100px 0 120px;
+    text-align: left;
+  }
+
+  .success.active { display: block; }
+
+  .success h2 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(44px, 6vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 32px;
+    max-width: 14ch;
+  }
+
+  .success h2 em { font-style: italic; color: var(--petrol); }
+
+  .success p {
+    font-size: 17px;
+    line-height: 1.65;
+    margin-bottom: 20px;
+    max-width: 56ch;
+    color: var(--ink);
+  }
+
+  .success .next-steps {
+    margin-top: 40px;
+    padding: 32px;
+    background: var(--petrol);
+    color: var(--paper);
+    border-radius: 2px;
+  }
+
+  .success .next-steps h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  .success .next-steps ol {
+    list-style: none;
+    counter-reset: item;
+  }
+
+  .success .next-steps ol li {
+    counter-increment: item;
+    padding: 16px 0 16px 48px;
+    position: relative;
+    border-bottom: 1px solid rgba(245, 240, 232, 0.15);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .success .next-steps ol li:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .success .next-steps ol li::before {
+    content: counter(item, upper-roman) ".";
+    position: absolute;
+    left: 0;
+    top: 16px;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--paper-deep);
+    font-weight: 400;
+  }
+
+  .success-cta {
+    margin-top: 40px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .whatsapp-btn {
+    background: #25D366;
+    color: white;
+    border-color: #25D366;
+  }
+
+  .whatsapp-btn:hover {
+    background: #1fb855;
+    border-color: #1fb855;
+  }
+
+  /* ======= FOOTER ======= */
+  footer {
+    padding: 40px 0;
+    border-top: 1px solid var(--rule);
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  footer strong { color: var(--ink); font-weight: 500; }
+
+  ::selection {
+    background: var(--petrol);
+    color: var(--paper);
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="page-header">
+  <div class="container">
+    <div class="brand">
+      Dr. Mauricio Vidal
+      <span>Médico · CRM-SP 263079</span>
+    </div>
+    <a href="index.html" class="back-link">← Voltar ao site</a>
+  </div>
+</header>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="container">
+    <div class="eyebrow">Triagem clínica</div>
+    <h1>
+      Antes de<br>
+      agendar, <em>me<br>
+      conta seu caso</em>.
+    </h1>
+    <p class="intro-text">
+      Esse formulário leva cerca de <em>4 minutos</em> para ser preenchido. As respostas chegam diretamente ao Dr. Mauricio antes da sua consulta — isso permite que ele já entre na primeira conversa com o seu contexto em mãos, sem desperdiçar tempo com pergunta básica.
+    </p>
+    <p class="intro-text">
+      Tudo que você responder é sigiloso e protegido por segredo médico. Campos marcados com <span style="color: var(--petrol); font-family: var(--display); font-style: italic;">·</span> são obrigatórios.
+    </p>
+
+    <div class="meta-notes">
+      <div class="note">
+        <strong>~ 4 min</strong>
+        Tempo estimado
+      </div>
+      <div class="note">
+        <strong>08 etapas</strong>
+        Perguntas organizadas
+      </div>
+      <div class="note">
+        <strong>Sigiloso</strong>
+        Dados protegidos
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRESS -->
+<div class="progress-wrap">
+  <div class="container">
+    <div class="progress-row">
+      <div class="progress-label">
+        Etapa <span id="currentStep">1</span> de <span id="totalSteps">8</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-bar-fill" id="progressFill"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FORM -->
+<form id="triageForm" novalidate>
+  <div class="container">
+
+    <!-- STEP 1: Dados pessoais -->
+    <div class="step active" data-step="1">
+      <span class="step-number">— Etapa I</span>
+      <h2>Para começar, <em>quem é você?</em></h2>
+      <p class="step-description">Dados básicos de contato. Prometemos não encher seu WhatsApp com propaganda.</p>
+
+      <div class="field">
+        <label class="field-label" for="nome">Nome completo <span class="req">·</span></label>
+        <input type="text" id="nome" name="nome" required autocomplete="name">
+        <div class="field-error">Informe seu nome completo.</div>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="email">E-mail <span class="req">·</span></label>
+        <input type="email" id="email" name="email" required autocomplete="email">
+        <div class="field-error">Informe um e-mail válido.</div>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="whatsapp">WhatsApp (com DDD) <span class="req">·</span></label>
+        <input type="tel" id="whatsapp" name="whatsapp" required placeholder="11 99999-9999" autocomplete="tel">
+        <div class="field-error">Informe um WhatsApp válido.</div>
+      </div>
+
+      <div class="row-two">
+        <div class="field">
+          <label class="field-label" for="idade">Idade <span class="req">·</span></label>
+          <input type="number" id="idade" name="idade" min="1" max="120" required>
+          <div class="field-error">Informe sua idade.</div>
+        </div>
+        <div class="field">
+          <label class="field-label" for="cidade">Cidade / Estado <span class="req">·</span></label>
+          <input type="text" id="cidade" name="cidade" required placeholder="Ex: São Paulo / SP">
+          <div class="field-error">Informe sua cidade.</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Sexo biológico <span class="req">·</span></label>
+        <div class="options-grid two-col">
+          <div class="option">
+            <input type="radio" id="sexo-f" name="sexo" value="Feminino" required>
+            <label for="sexo-f">Feminino</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="sexo-m" name="sexo" value="Masculino" required>
+            <label for="sexo-m">Masculino</label>
+          </div>
+        </div>
+        <div class="field-error">Selecione uma opção.</div>
+      </div>
+
+      <div class="step-nav">
+        <div></div>
+        <button type="button" class="btn" data-next>
+          Continuar
+          <span>→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Medidas atuais -->
+    <div class="step" data-step="2">
+      <span class="step-number">— Etapa II</span>
+      <h2>Suas <em>medidas</em> atuais</h2>
+      <p class="step-description">Aproximações são válidas — o Dr. confirma tudo na consulta. Se não souber exato, coloque o valor mais próximo.</p>
+
+      <div class="row-two">
+        <div class="field">
+          <label class="field-label" for="peso">Peso atual (kg) <span class="req">·</span></label>
+          <input type="number" id="peso" name="peso" step="0.1" min="30" max="300" required>
+          <div class="field-error">Informe seu peso.</div>
+        </div>
+        <div class="field">
+          <label class="field-label" for="altura">Altura (cm) <span class="req">·</span></label>
+          <input type="number" id="altura" name="altura" min="100" max="230" required placeholder="Ex: 168">
+          <div class="field-error">Informe sua altura.</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="peso-maximo">Qual foi seu <em>peso máximo</em> até hoje? <span class="optional">Opcional</span></label>
+        <input type="number" id="peso-maximo" name="peso-maximo" step="0.1" min="30" max="300">
+        <div class="field-hint">Inclua o peso mais alto que você lembra ter atingido na vida adulta.</div>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="peso-ideal">E qual seria seu <em>peso desejado</em>? <span class="optional">Opcional</span></label>
+        <input type="number" id="peso-ideal" name="peso-ideal" step="0.1" min="30" max="300">
+        <div class="field-hint">Sua expectativa — não precisa ser "realista" ainda, isso se ajusta na consulta.</div>
+      </div>
+
+      <div class="step-nav">
+        <button type="button" class="btn btn-ghost" data-prev>← Voltar</button>
+        <button type="button" class="btn" data-next>Continuar <span>→</span></button>
+      </div>
+    </div>
+
+    <!-- STEP 3: História de emagrecimento -->
+    <div class="step" data-step="3">
+      <span class="step-number">— Etapa III</span>
+      <h2>Seu <em>histórico</em> com emagrecimento</h2>
+      <p class="step-description">Quanto mais honesto aqui, mais preciso será o diagnóstico. Suas tentativas anteriores são informação clínica valiosa.</p>
+
+      <div class="field">
+        <label class="field-label">Há quanto tempo você tenta emagrecer? <span class="req">·</span></label>
+        <div class="options-grid two-col">
+          <div class="option">
+            <input type="radio" id="tempo-1" name="tempo-tentativas" value="Menos de 1 ano" required>
+            <label for="tempo-1">Menos de 1 ano</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="tempo-2" name="tempo-tentativas" value="1 a 3 anos" required>
+            <label for="tempo-2">De 1 a 3 anos</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="tempo-3" name="tempo-tentativas" value="3 a 10 anos" required>
+            <label for="tempo-3">De 3 a 10 anos</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="tempo-4" name="tempo-tentativas" value="Mais de 10 anos" required>
+            <label for="tempo-4">Mais de 10 anos</label>
+          </div>
+        </div>
+        <div class="field-error">Selecione uma opção.</div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Quantas vezes você já perdeu peso e recuperou? <span class="req">·</span></label>
+        <div class="options-grid two-col">
+          <div class="option">
+            <input type="radio" id="sanfona-0" name="sanfona" value="Nunca aconteceu" required>
+            <label for="sanfona-0">Nunca aconteceu</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="sanfona-1" name="sanfona" value="1 ou 2 vezes" required>
+            <label for="sanfona-1">1 ou 2 vezes</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="sanfona-2" name="sanfona" value="3 a 5 vezes" required>
+            <label for="sanfona-2">3 a 5 vezes</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="sanfona-3" name="sanfona" value="Perdi a conta" required>
+            <label for="sanfona-3">Perdi a conta</label>
+          </div>
+        </div>
+        <div class="field-error">Selecione uma opção.</div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">O que você já tentou? <span class="optional">Marque todas que se aplicam</span></label>
+        <div class="options-grid">
+          <div class="option">
+            <input type="checkbox" id="t-nutri" name="tentativas[]" value="Nutricionista">
+            <label for="t-nutri">Nutricionista</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="t-lowcarb" name="tentativas[]" value="Low-carb / Cetogênica">
+            <label for="t-lowcarb">Low-carb / Cetogênica</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="t-jejum" name="tentativas[]" value="Jejum intermitente">
+            <label for="t-jejum">Jejum intermitente</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="t-academia" name="tentativas[]" value="Academia / Personal">
+            <label for="t-academia">Academia / Personal</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="t-shake" name="tentativas[]" value="Shakes / Suplementos">
+            <label for="t-shake">Shakes / Suplementos</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="t-medic" name="tentativas[]" value="Medicação prescrita">
+            <label for="t-medic">Medicação prescrita</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="t-ozem" name="tentativas[]" value="Ozempic / Mounjaro / Saxenda">
+            <label for="t-ozem">Ozempic / Mounjaro / Saxenda</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="t-bariat" name="tentativas[]" value="Cirurgia bariátrica">
+            <label for="t-bariat">Cirurgia bariátrica</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="t-sozinho" name="tentativas[]" value="Por conta própria / internet">
+            <label for="t-sozinho">Por conta própria / internet</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-nav">
+        <button type="button" class="btn btn-ghost" data-prev>← Voltar</button>
+        <button type="button" class="btn" data-next>Continuar <span>→</span></button>
+      </div>
+    </div>
+
+    <!-- STEP 4: Sintomas e queixas -->
+    <div class="step" data-step="4">
+      <span class="step-number">— Etapa IV</span>
+      <h2>Como seu <em>corpo se sente</em> hoje?</h2>
+      <p class="step-description">Sintomas que muitos pacientes aprendem a "ignorar", mas que são informação clínica importante.</p>
+
+      <div class="field">
+        <label class="field-label">Quais sintomas você percebe <em>com frequência</em>? <span class="optional">Marque todos que se aplicam</span></label>
+        <div class="options-grid">
+          <div class="option">
+            <input type="checkbox" id="s-fome" name="sintomas[]" value="Fome constante, mesmo após comer">
+            <label for="s-fome">Fome constante, mesmo após comer</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="s-cansaco" name="sintomas[]" value="Cansaço ao acordar">
+            <label for="s-cansaco">Cansaço ao acordar</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="s-tarde" name="sintomas[]" value="Queda de energia à tarde">
+            <label for="s-tarde">Queda de energia à tarde</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="s-desejo" name="sintomas[]" value="Desejo por doce / açúcar">
+            <label for="s-desejo">Desejo por doce / açúcar</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="s-comp" name="sintomas[]" value="Compulsão alimentar">
+            <label for="s-comp">Compulsão alimentar</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="s-noite" name="sintomas[]" value="Comer à noite / compulsão noturna">
+            <label for="s-noite">Comer à noite / compulsão noturna</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="s-intest" name="sintomas[]" value="Intestino preso / desregulado">
+            <label for="s-intest">Intestino preso / desregulado</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="s-incho" name="sintomas[]" value="Inchaço abdominal">
+            <label for="s-incho">Inchaço abdominal</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="s-sono" name="sintomas[]" value="Dificuldade para dormir">
+            <label for="s-sono">Dificuldade para dormir</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="s-ansio" name="sintomas[]" value="Ansiedade / estresse crônico">
+            <label for="s-ansio">Ansiedade / estresse crônico</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="s-libido" name="sintomas[]" value="Queda de libido">
+            <label for="s-libido">Queda de libido</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="s-ciclo" name="sintomas[]" value="Ciclo menstrual irregular">
+            <label for="s-ciclo">Ciclo menstrual irregular</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Em geral, seu nível de energia é: <span class="req">·</span></label>
+        <div class="scale-row">
+          <div class="option">
+            <input type="radio" id="energia-1" name="energia" value="1" required>
+            <label for="energia-1">1</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="energia-2" name="energia" value="2" required>
+            <label for="energia-2">2</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="energia-3" name="energia" value="3" required>
+            <label for="energia-3">3</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="energia-4" name="energia" value="4" required>
+            <label for="energia-4">4</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="energia-5" name="energia" value="5" required>
+            <label for="energia-5">5</label>
+          </div>
+        </div>
+        <div class="scale-labels">
+          <span>Exausto</span>
+          <span>Pleno</span>
+        </div>
+        <div class="field-error">Selecione um valor.</div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Quantas horas você dorme, em média, por noite? <span class="req">·</span></label>
+        <div class="options-grid two-col">
+          <div class="option">
+            <input type="radio" id="sono-1" name="sono" value="Menos de 5h" required>
+            <label for="sono-1">Menos de 5h</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="sono-2" name="sono" value="5 a 6h" required>
+            <label for="sono-2">5 a 6h</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="sono-3" name="sono" value="7 a 8h" required>
+            <label for="sono-3">7 a 8h</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="sono-4" name="sono" value="Mais de 8h" required>
+            <label for="sono-4">Mais de 8h</label>
+          </div>
+        </div>
+        <div class="field-error">Selecione uma opção.</div>
+      </div>
+
+      <div class="step-nav">
+        <button type="button" class="btn btn-ghost" data-prev>← Voltar</button>
+        <button type="button" class="btn" data-next>Continuar <span>→</span></button>
+      </div>
+    </div>
+
+    <!-- STEP 5: Condições clínicas -->
+    <div class="step" data-step="5">
+      <span class="step-number">— Etapa V</span>
+      <h2>Condições clínicas e <em>medicações</em></h2>
+      <p class="step-description">Essencial para o Dr. entender o contexto completo do seu caso.</p>
+
+      <div class="field">
+        <label class="field-label">Você tem ou já teve alguma dessas condições? <span class="optional">Marque todas que se aplicam</span></label>
+        <div class="options-grid">
+          <div class="option">
+            <input type="checkbox" id="c-hipert" name="condicoes[]" value="Hipertensão">
+            <label for="c-hipert">Hipertensão</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="c-diab" name="condicoes[]" value="Diabetes tipo 2">
+            <label for="c-diab">Diabetes tipo 2</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="c-pre" name="condicoes[]" value="Pré-diabetes">
+            <label for="c-pre">Pré-diabetes</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="c-resist" name="condicoes[]" value="Resistência à insulina">
+            <label for="c-resist">Resistência à insulina</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="c-colest" name="condicoes[]" value="Colesterol alto">
+            <label for="c-colest">Colesterol alto</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="c-tir" name="condicoes[]" value="Tireoide (hipo / hiper)">
+            <label for="c-tir">Tireoide (hipo / hiper)</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="c-sop" name="condicoes[]" value="SOP (ovário policístico)">
+            <label for="c-sop">SOP (ovário policístico)</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="c-esteat" name="condicoes[]" value="Esteatose hepática">
+            <label for="c-esteat">Esteatose hepática</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="c-ansi" name="condicoes[]" value="Ansiedade / Depressão">
+            <label for="c-ansi">Ansiedade / Depressão</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="c-apneia" name="condicoes[]" value="Apneia do sono">
+            <label for="c-apneia">Apneia do sono</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="c-art" name="condicoes[]" value="Dores articulares crônicas">
+            <label for="c-art">Dores articulares crônicas</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="c-nada" name="condicoes[]" value="Nenhuma das acima">
+            <label for="c-nada">Nenhuma das acima</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="medicacoes">Medicações e suplementos que você usa atualmente <span class="optional">Liste todos, com dose se souber</span></label>
+        <textarea id="medicacoes" name="medicacoes" placeholder="Ex: Losartana 50mg 1x/dia, anticoncepcional Selene, vitamina D 2000UI, creatina 5g..."></textarea>
+        <div class="field-hint">Se não usa nenhum, escreva "Nenhum".</div>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="alergias">Alergias ou intolerâncias conhecidas <span class="optional">Opcional</span></label>
+        <textarea id="alergias" name="alergias" placeholder="Ex: lactose, glúten, frutos do mar, medicações..."></textarea>
+      </div>
+
+      <div class="step-nav">
+        <button type="button" class="btn btn-ghost" data-prev>← Voltar</button>
+        <button type="button" class="btn" data-next>Continuar <span>→</span></button>
+      </div>
+    </div>
+
+    <!-- STEP 6: Rotina e alimentação -->
+    <div class="step" data-step="6">
+      <span class="step-number">— Etapa VI</span>
+      <h2>Sua <em>rotina real</em></h2>
+      <p class="step-description">A rotina que acontece, não a que você gostaria que acontecesse. Aqui não existe resposta "certa" — existe resposta verdadeira.</p>
+
+      <div class="field">
+        <label class="field-label">Quantas refeições você faz por dia, em média? <span class="req">·</span></label>
+        <div class="options-grid two-col">
+          <div class="option">
+            <input type="radio" id="ref-1" name="refeicoes" value="1 a 2 refeições" required>
+            <label for="ref-1">1 a 2 refeições</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="ref-2" name="refeicoes" value="3 refeições" required>
+            <label for="ref-2">3 refeições</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="ref-3" name="refeicoes" value="4 a 5 refeições" required>
+            <label for="ref-3">4 a 5 refeições</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="ref-4" name="refeicoes" value="Belisco o dia inteiro" required>
+            <label for="ref-4">Belisco o dia inteiro</label>
+          </div>
+        </div>
+        <div class="field-error">Selecione uma opção.</div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Atividade física na rotina atual: <span class="req">·</span></label>
+        <div class="options-grid two-col">
+          <div class="option">
+            <input type="radio" id="ativ-1" name="atividade" value="Sedentário" required>
+            <label for="ativ-1">Sedentário</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="ativ-2" name="atividade" value="1 a 2x por semana" required>
+            <label for="ativ-2">1 a 2x por semana</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="ativ-3" name="atividade" value="3 a 4x por semana" required>
+            <label for="ativ-3">3 a 4x por semana</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="ativ-4" name="atividade" value="5x ou mais por semana" required>
+            <label for="ativ-4">5x+ por semana</label>
+          </div>
+        </div>
+        <div class="field-error">Selecione uma opção.</div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Consumo de álcool: <span class="req">·</span></label>
+        <div class="options-grid two-col">
+          <div class="option">
+            <input type="radio" id="alc-1" name="alcool" value="Não bebo" required>
+            <label for="alc-1">Não bebo</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="alc-2" name="alcool" value="Socialmente (1-2x/mês)" required>
+            <label for="alc-2">Social (1-2x/mês)</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="alc-3" name="alcool" value="Fim de semana" required>
+            <label for="alc-3">Fim de semana</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="alc-4" name="alcool" value="Frequentemente / quase todo dia" required>
+            <label for="alc-4">Quase todo dia</label>
+          </div>
+        </div>
+        <div class="field-error">Selecione uma opção.</div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Quanto a sua rotina de trabalho/vida impacta sua alimentação?</label>
+        <div class="scale-row">
+          <div class="option">
+            <input type="radio" id="rotina-1" name="rotina-impacto" value="1">
+            <label for="rotina-1">1</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="rotina-2" name="rotina-impacto" value="2">
+            <label for="rotina-2">2</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="rotina-3" name="rotina-impacto" value="3">
+            <label for="rotina-3">3</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="rotina-4" name="rotina-impacto" value="4">
+            <label for="rotina-4">4</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="rotina-5" name="rotina-impacto" value="5">
+            <label for="rotina-5">5</label>
+          </div>
+        </div>
+        <div class="scale-labels">
+          <span>Nada</span>
+          <span>Muito</span>
+        </div>
+      </div>
+
+      <div class="step-nav">
+        <button type="button" class="btn btn-ghost" data-prev>← Voltar</button>
+        <button type="button" class="btn" data-next>Continuar <span>→</span></button>
+      </div>
+    </div>
+
+    <!-- STEP 7: Expectativa e motivação -->
+    <div class="step" data-step="7">
+      <span class="step-number">— Etapa VII</span>
+      <h2>Sua <em>motivação</em> para buscar ajuda agora</h2>
+      <p class="step-description">Entender por que agora, e o que te levou aqui, ajuda o Dr. a construir uma estratégia que faça sentido para a sua vida real.</p>
+
+      <div class="field">
+        <label class="field-label">O que mais te incomoda <em>hoje</em>? <span class="req">·</span></label>
+        <div class="options-grid single-col">
+          <div class="option">
+            <input type="radio" id="inc-1" name="incomoda" value="Peso / aparência" required>
+            <label for="inc-1">O peso e a aparência</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="inc-2" name="incomoda" value="Falta de energia" required>
+            <label for="inc-2">A falta de energia no dia a dia</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="inc-3" name="incomoda" value="Compulsão / relação com comida" required>
+            <label for="inc-3">A relação doentia com a comida</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="inc-4" name="incomoda" value="Saúde geral / exames" required>
+            <label for="inc-4">Alterações em exames ou saúde geral</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="inc-5" name="incomoda" value="Autoestima e autoconfiança" required>
+            <label for="inc-5">A autoestima e a forma como me vejo</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="inc-6" name="incomoda" value="Tudo junto" required>
+            <label for="inc-6">Tudo junto</label>
+          </div>
+        </div>
+        <div class="field-error">Selecione uma opção.</div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Numa escala de 1 a 5, quão <em>comprometido</em> você se sente em iniciar o tratamento? <span class="req">·</span></label>
+        <div class="scale-row">
+          <div class="option">
+            <input type="radio" id="comp-1" name="comprometimento" value="1" required>
+            <label for="comp-1">1</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="comp-2" name="comprometimento" value="2" required>
+            <label for="comp-2">2</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="comp-3" name="comprometimento" value="3" required>
+            <label for="comp-3">3</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="comp-4" name="comprometimento" value="4" required>
+            <label for="comp-4">4</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="comp-5" name="comprometimento" value="5" required>
+            <label for="comp-5">5</label>
+          </div>
+        </div>
+        <div class="scale-labels">
+          <span>Só explorando</span>
+          <span>Totalmente pronto</span>
+        </div>
+        <div class="field-error">Selecione um valor.</div>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="mensagem">Há algo importante que você gostaria que o Dr. Mauricio soubesse antes da consulta? <span class="optional">Opcional</span></label>
+        <textarea id="mensagem" name="mensagem" placeholder="Use esse espaço livremente — histórico relevante, situações específicas, preocupações, dúvidas iniciais..."></textarea>
+      </div>
+
+      <div class="step-nav">
+        <button type="button" class="btn btn-ghost" data-prev>← Voltar</button>
+        <button type="button" class="btn" data-next>Continuar <span>→</span></button>
+      </div>
+    </div>
+
+    <!-- STEP 8: Preferência de agendamento -->
+    <div class="step" data-step="8">
+      <span class="step-number">— Etapa VIII</span>
+      <h2>Para <em>finalizar</em></h2>
+      <p class="step-description">Como a secretaria pode melhor falar com você para agendar.</p>
+
+      <div class="field">
+        <label class="field-label">Melhor canal para contato: <span class="req">·</span></label>
+        <div class="options-grid two-col">
+          <div class="option">
+            <input type="radio" id="canal-1" name="canal" value="WhatsApp" required>
+            <label for="canal-1">WhatsApp</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="canal-2" name="canal" value="Ligação telefônica" required>
+            <label for="canal-2">Ligação telefônica</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="canal-3" name="canal" value="E-mail" required>
+            <label for="canal-3">E-mail</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="canal-4" name="canal" value="Qualquer um dos três" required>
+            <label for="canal-4">Qualquer um</label>
+          </div>
+        </div>
+        <div class="field-error">Selecione uma opção.</div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Melhor período para contato: <span class="req">·</span></label>
+        <div class="options-grid two-col">
+          <div class="option">
+            <input type="radio" id="per-1" name="periodo" value="Manhã (08h-12h)" required>
+            <label for="per-1">Manhã (08h–12h)</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="per-2" name="periodo" value="Tarde (12h-18h)" required>
+            <label for="per-2">Tarde (12h–18h)</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="per-3" name="periodo" value="Noite (após 18h)" required>
+            <label for="per-3">Noite (após 18h)</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="per-4" name="periodo" value="Qualquer horário comercial" required>
+            <label for="per-4">Qualquer horário</label>
+          </div>
+        </div>
+        <div class="field-error">Selecione uma opção.</div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Como você nos conheceu? <span class="optional">Opcional</span></label>
+        <select name="origem" id="origem">
+          <option value="">Selecione...</option>
+          <option value="Instagram">Instagram do Dr. Mauricio</option>
+          <option value="Indicação">Indicação de paciente / amigo</option>
+          <option value="Google">Pesquisa no Google</option>
+          <option value="Outro médico">Indicação de outro médico</option>
+          <option value="Outro">Outro</option>
+        </select>
+      </div>
+
+      <div class="step-nav">
+        <button type="button" class="btn btn-ghost" data-prev>← Voltar</button>
+        <button type="submit" class="btn" id="submitBtn">
+          Enviar triagem
+          <span>→</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</form>
+
+<!-- SUCCESS -->
+<section class="success" id="successView">
+  <div class="container">
+    <span class="step-number">— Triagem recebida</span>
+    <h2>Obrigado.<br>Suas respostas<br>chegaram <em>ao Dr.</em></h2>
+    <p>As informações que você compartilhou vão direto para o Dr. Mauricio Vidal. A partir daqui, a secretaria entrará em contato pelo canal que você indicou para confirmar o melhor horário disponível na agenda.</p>
+    <p>O retorno acontece normalmente no mesmo dia útil — em casos de grande demanda, em até <em>24h úteis</em>.</p>
+
+    <div class="next-steps">
+      <h3>Próximos passos</h3>
+      <ol>
+        <li>A secretaria entra em contato pelo canal escolhido para confirmar horário disponível na agenda.</li>
+        <li>Você confirma, recebe o link de pagamento e o link da consulta online.</li>
+        <li>Na véspera da consulta, você recebe um lembrete automático com orientações finais (ter exames em mãos, estar em ambiente tranquilo etc.).</li>
+      </ol>
+    </div>
+
+    <div class="success-cta">
+      <a href="https://wa.me/5511950792425?text=Olá,%20acabei%20de%20preencher%20a%20triagem%20no%20site." class="btn whatsapp-btn" target="_blank" rel="noopener">
+        Agilizar pelo WhatsApp
+        <span>→</span>
+      </a>
+      <a href="index.html" class="btn btn-ghost">Voltar ao site</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <strong>Dr. Mauricio Vidal</strong> · Médico · CRM-SP 263079<br>
+    © 2026 · As informações deste formulário são sigilosas e protegidas por segredo médico. Os dados são utilizados exclusivamente para triagem clínica pré-consulta, não estabelecem relação médico-paciente antes do atendimento formal e não são compartilhados com terceiros.
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('triageForm');
+  const steps = document.querySelectorAll('.step');
+  const totalSteps = steps.length;
+  const progressFill = document.getElementById('progressFill');
+  const currentStepEl = document.getElementById('currentStep');
+  const totalStepsEl = document.getElementById('totalSteps');
+  const successView = document.getElementById('successView');
+  const progressWrap = document.querySelector('.progress-wrap');
+
+  let currentStep = 0;
+  totalStepsEl.textContent = totalSteps;
+
+  function updateProgress() {
+    const percent = ((currentStep + 1) / totalSteps) * 100;
+    progressFill.style.width = percent + '%';
+    currentStepEl.textContent = currentStep + 1;
+  }
+
+  function showStep(index) {
+    steps.forEach((s, i) => s.classList.toggle('active', i === index));
+    currentStep = index;
+    updateProgress();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function validateStep(stepIndex) {
+    const step = steps[stepIndex];
+    const fields = step.querySelectorAll('input[required], select[required], textarea[required]');
+    let valid = true;
+    const groupsChecked = new Set();
+
+    fields.forEach(field => {
+      const fieldWrap = field.closest('.field');
+      fieldWrap.classList.remove('has-error');
+
+      if (field.type === 'radio') {
+        if (groupsChecked.has(field.name)) return;
+        groupsChecked.add(field.name);
+        const checked = step.querySelector(`input[name="${field.name}"]:checked`);
+        if (!checked) {
+          fieldWrap.classList.add('has-error');
+          valid = false;
+        }
+      } else if (!field.value.trim()) {
+        fieldWrap.classList.add('has-error');
+        valid = false;
+      } else if (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
+        fieldWrap.classList.add('has-error');
+        valid = false;
+      }
+    });
+
+    return valid;
+  }
+
+  // Next buttons
+  document.querySelectorAll('[data-next]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (!validateStep(currentStep)) return;
+      if (currentStep < totalSteps - 1) showStep(currentStep + 1);
+    });
+  });
+
+  // Prev buttons
+  document.querySelectorAll('[data-prev]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (currentStep > 0) showStep(currentStep - 1);
+    });
+  });
+
+  // Submit
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!validateStep(currentStep)) return;
+
+    // Collect data
+    const data = new FormData(form);
+    const payload = {};
+    data.forEach((value, key) => {
+      if (key.endsWith('[]')) {
+        const k = key.slice(0, -2);
+        if (!payload[k]) payload[k] = [];
+        payload[k].push(value);
+      } else {
+        payload[key] = value;
+      }
+    });
+
+    // Handle checkbox groups without any selection
+    ['tentativas[]', 'sintomas[]', 'condicoes[]'].forEach(k => {
+      const clean = k.slice(0, -2);
+      if (!payload[clean]) payload[clean] = [];
+    });
+
+    console.log('Triagem recebida:', payload);
+
+    // Build WhatsApp message summary
+    const msg = buildWhatsAppMessage(payload);
+
+    // Store locally for safety
+    try {
+      localStorage.setItem('triagem_dr_mauricio_' + Date.now(), JSON.stringify(payload));
+    } catch (e) {}
+
+    // Open WhatsApp with pre-filled message
+    const whatsappUrl = `https://wa.me/5511950792425?text=${encodeURIComponent(msg)}`;
+
+    // Show success view
+    form.style.display = 'none';
+    progressWrap.style.display = 'none';
+    successView.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Auto-redirect to WhatsApp after 2s (optional — user can click button too)
+    setTimeout(() => {
+      window.open(whatsappUrl, '_blank');
+    }, 1500);
+  });
+
+  function buildWhatsAppMessage(p) {
+    const lines = [];
+    lines.push('*— NOVA TRIAGEM —*');
+    lines.push('');
+    lines.push(`*Nome:* ${p.nome || '-'}`);
+    lines.push(`*Idade:* ${p.idade || '-'} anos`);
+    lines.push(`*Sexo:* ${p.sexo || '-'}`);
+    lines.push(`*Cidade:* ${p.cidade || '-'}`);
+    lines.push(`*E-mail:* ${p.email || '-'}`);
+    lines.push(`*WhatsApp:* ${p.whatsapp || '-'}`);
+    lines.push('');
+    lines.push(`*Peso atual:* ${p.peso || '-'} kg`);
+    lines.push(`*Altura:* ${p.altura || '-'} cm`);
+    if (p['peso-maximo']) lines.push(`*Peso máximo:* ${p['peso-maximo']} kg`);
+    if (p['peso-ideal']) lines.push(`*Peso desejado:* ${p['peso-ideal']} kg`);
+    lines.push('');
+    lines.push(`*Tenta emagrecer há:* ${p['tempo-tentativas'] || '-'}`);
+    lines.push(`*Efeito sanfona:* ${p.sanfona || '-'}`);
+    if (p.tentativas && p.tentativas.length) lines.push(`*Já tentou:* ${p.tentativas.join(', ')}`);
+    lines.push('');
+    if (p.sintomas && p.sintomas.length) lines.push(`*Sintomas:* ${p.sintomas.join(', ')}`);
+    lines.push(`*Energia (1-5):* ${p.energia || '-'}`);
+    lines.push(`*Sono médio:* ${p.sono || '-'}`);
+    lines.push('');
+    if (p.condicoes && p.condicoes.length) lines.push(`*Condições:* ${p.condicoes.join(', ')}`);
+    if (p.medicacoes) lines.push(`*Medicações:* ${p.medicacoes}`);
+    if (p.alergias) lines.push(`*Alergias:* ${p.alergias}`);
+    lines.push('');
+    lines.push(`*Refeições/dia:* ${p.refeicoes || '-'}`);
+    lines.push(`*Atividade física:* ${p.atividade || '-'}`);
+    lines.push(`*Álcool:* ${p.alcool || '-'}`);
+    if (p['rotina-impacto']) lines.push(`*Impacto da rotina (1-5):* ${p['rotina-impacto']}`);
+    lines.push('');
+    lines.push(`*O que mais incomoda:* ${p.incomoda || '-'}`);
+    lines.push(`*Comprometimento (1-5):* ${p.comprometimento || '-'}`);
+    if (p.mensagem) {
+      lines.push('');
+      lines.push(`*Mensagem ao Dr.:* ${p.mensagem}`);
+    }
+    lines.push('');
+    lines.push(`*Canal de contato:* ${p.canal || '-'}`);
+    lines.push(`*Período ideal:* ${p.periodo || '-'}`);
+    if (p.origem) lines.push(`*Origem:* ${p.origem}`);
+    return lines.join('\n');
+  }
+
+  updateProgress();
+</script>
+
+</body>
+</html>

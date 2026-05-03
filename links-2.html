@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0A0A0A">
+<title>Dr. Mauricio Vidal | Links</title>
+<meta name="description" content="Médico dedicado ao emagrecimento clínico individualizado. CRM-SP 263079.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0A0A0A;
+    --paper: #F5F0E8;
+    --paper-deep: #E8DFD3;
+    --petrol: #1B3A4B;
+    --petrol-deep: #0E2632;
+    --white: #FFFFFF;
+    --rule: rgba(10, 10, 10, 0.12);
+    --muted: rgba(10, 10, 10, 0.6);
+    --whatsapp: #25D366;
+    --display: "Fraunces", Georgia, serif;
+    --sans: "Geist", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+
+  /* ========= GRAIN OVERLAY ========= */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    pointer-events: none;
+    z-index: 100;
+    mix-blend-mode: multiply;
+    opacity: 0.5;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .container {
+    width: 100%;
+    max-width: 460px;
+    margin: 0 auto;
+    padding: 32px 24px 48px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ========= HEADER / IDENTITY ========= */
+  .identity {
+    text-align: center;
+    margin-bottom: 40px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    background: var(--petrol);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--paper);
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 38px;
+    letter-spacing: -0.02em;
+    box-shadow: 0 8px 24px rgba(160, 69, 57, 0.18);
+    border: 3px solid var(--paper);
+    outline: 1px solid var(--rule);
+  }
+
+  /* If you want to use a real photo, replace the avatar div content
+     with: <img src="sua-foto.jpg" alt="Dr. Mauricio Vidal"> */
+
+  .name {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 26px;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .name em {
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .credential {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 8px;
+    font-weight: 500;
+  }
+
+  .tagline {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.4;
+    color: var(--ink);
+    margin-top: 20px;
+    max-width: 32ch;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: -0.01em;
+  }
+
+  .tagline em {
+    color: var(--petrol);
+    font-style: italic;
+  }
+
+  /* ========= LINKS LIST ========= */
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+
+  .link {
+    display: block;
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 22px 24px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    animation: fadeUp 0.7s ease both;
+  }
+
+  .link:nth-child(1) { animation-delay: 0.1s; }
+  .link:nth-child(2) { animation-delay: 0.2s; }
+  .link:nth-child(3) { animation-delay: 0.3s; }
+  .link:nth-child(4) { animation-delay: 0.4s; }
+  .link:nth-child(5) { animation-delay: 0.5s; }
+
+  .link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(26, 31, 26, 0.08);
+    border-color: var(--ink);
+  }
+
+  .link:active {
+    transform: translateY(0);
+  }
+
+  .link-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .link-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+  .link-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+  }
+
+  .link-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .link-title {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+
+  .link-sub {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .link-arrow {
+    flex-shrink: 0;
+    font-family: var(--display);
+    font-weight: 300;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--muted);
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .link:hover .link-arrow {
+    transform: translateX(4px);
+    color: var(--petrol);
+  }
+
+  /* Variants */
+  .link.primary {
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+
+  .link.primary .link-title { color: var(--paper); }
+  .link.primary .link-sub { color: rgba(237, 227, 214, 0.65); }
+  .link.primary .link-arrow { color: var(--paper-deep); }
+
+  .link.primary:hover {
+    background: var(--petrol);
+    border-color: var(--petrol);
+  }
+
+  .link.whatsapp .link-icon {
+    background: var(--whatsapp);
+  }
+
+  .link.site .link-icon {
+    background: var(--ink);
+  }
+
+  .link.ebook .link-icon {
+    background: var(--petrol);
+  }
+
+  .link.instagram .link-icon {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  }
+
+  .link.calendar .link-icon {
+    background: var(--paper-deep);
+    color: var(--ink);
+  }
+
+  /* Highlight badge */
+  .link.featured {
+    border: 1px solid var(--petrol);
+    background: var(--paper-deep);
+  }
+
+  .badge {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 3px 9px;
+    background: var(--petrol);
+    color: var(--paper);
+    border-radius: 10px;
+  }
+
+  /* ========= DIVIDER ========= */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 8px 0 20px;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .divider::before,
+  .divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ========= SOCIAL MINI ========= */
+  .social-mini {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.9s 0.6s ease both;
+  }
+
+  .social-mini a {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: var(--ink);
+  }
+
+  .social-mini a:hover {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+    transform: translateY(-2px);
+  }
+
+  .social-mini svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+  }
+
+  /* ========= FOOTER ========= */
+  footer {
+    margin-top: auto;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    animation: fadeUp 1s 0.7s ease both;
+  }
+
+  .footer-disclaimer {
+    font-size: 10px;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 38ch;
+    margin: 0 auto;
+  }
+
+  .footer-disclaimer strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* ========= ANIMATIONS ========= */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  ::selection {
+    background: var(--petrol);
+    color: var(--paper);
+  }
+
+  /* Mobile-first refinement */
+  @media (max-width: 380px) {
+    .container { padding: 24px 18px 36px; }
+    .name { font-size: 24px; }
+    .tagline { font-size: 16px; }
+    .link { padding: 18px 18px; }
+    .link-icon { width: 40px; height: 40px; }
+    .link-title { font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ============ IDENTITY ============ -->
+  <header class="identity">
+    <!-- Substitua pelo <img> com sua foto real quando quiser -->
+    <div class="avatar">MV</div>
+    <div class="name"><em>Dr.</em> Mauricio Vidal</div>
+    <div class="credential">Médico · CRM-SP 263079</div>
+    <p class="tagline">
+      Para quem já tentou de tudo<br>
+      e está pronto para parar<br>
+      de <em>tentar</em>.
+    </p>
+  </header>
+
+  <!-- ============ LINKS ============ -->
+  <nav class="links">
+
+    <!-- Link 1: Agendar consulta (PRIMARY — destaque máximo) -->
+    <a href="https://wa.me/5511950792425?text=Ol%C3%A1%2C%20Dr.%20Mauricio.%20Gostaria%20de%20agendar%20uma%20consulta." class="link primary whatsapp" target="_blank" rel="noopener" data-track="whatsapp">
+      <span class="badge">Vagas limitadas</span>
+      <div class="link-row">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </div>
+        <div class="link-content">
+          <div class="link-title">Agendar consulta pelo WhatsApp</div>
+          <div class="link-sub">Triagem rápida + horário disponível</div>
+        </div>
+        <div class="link-arrow">→</div>
+      </div>
+    </a>
+
+    <!-- Link 2: Site -->
+    <a href="https://drmauriciovidal.com.br" class="link site" target="_blank" rel="noopener" data-track="site">
+      <div class="link-row">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+          </svg>
+        </div>
+        <div class="link-content">
+          <div class="link-title">Conhecer o método</div>
+          <div class="link-sub">Filosofia, abordagem e perguntas frequentes</div>
+        </div>
+        <div class="link-arrow">→</div>
+      </div>
+    </a>
+
+    <!-- Link 3: E-book -->
+    <a href="https://pay.kiwify.com.br/xaeDYIs" class="link ebook featured" target="_blank" rel="noopener" data-track="ebook">
+      <span class="badge">Novo</span>
+      <div class="link-row">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 4h6v2h-6V6zm0 4h6v2h-6v-2zm0 4h6v2h-6v-2zm-2 4H7v-2h2v2zm0-4H7v-2h2v2zm0-4H7v-2h2v2zm0-4H7V6h2v2z"/>
+          </svg>
+        </div>
+        <div class="link-content">
+          <div class="link-title">E-book · Não é preguiça, é hormônio</div>
+          <div class="link-sub">O que mudou no seu corpo + plano de 30 dias</div>
+        </div>
+        <div class="link-arrow">→</div>
+      </div>
+    </a>
+
+    <!-- Link 4 (opcional): Triagem direta -->
+    <a href="https://drmauriciovidal.com.br/triagem.html" class="link calendar" target="_blank" rel="noopener" data-track="triagem">
+      <div class="link-row">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+          </svg>
+        </div>
+        <div class="link-content">
+          <div class="link-title">Preencher triagem clínica</div>
+          <div class="link-sub">~ 4 minutos · Para casos mais complexos</div>
+        </div>
+        <div class="link-arrow">→</div>
+      </div>
+    </a>
+
+  </nav>
+
+  <!-- ============ DIVIDER ============ -->
+  <div class="divider">Acompanhe</div>
+
+  <!-- ============ SOCIAL ============ -->
+  <div class="social-mini">
+    <a href="https://instagram.com/drmauriciovidal" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+      </svg>
+    </a>
+    <a href="mailto:mauriciovidal47@gmail.com" target="_blank" rel="noopener" aria-label="E-mail">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <p class="footer-disclaimer">
+      <strong>Dr. Mauricio Vidal</strong> · Médico · CRM-SP 263079<br>
+      Atendimento online · Seg a sáb · 08h–20h<br>
+      © 2026 · Conteúdo educativo. Não substitui consulta médica individual.
+    </p>
+  </footer>
+
+</div>
+
+<script>
+  // Simple click tracking (logs to console — pode ser conectado ao Google Analytics depois)
+  document.querySelectorAll('[data-track]').forEach(link => {
+    link.addEventListener('click', function() {
+      const target = this.getAttribute('data-track');
+      console.log('Click:', target);
+      // Quando configurar GA4, descomente:
+      // if (typeof gtag !== 'undefined') gtag('event', 'bio_click', { 'destination': target });
+    });
+  });
+</script>
+
+</body>
+</html>

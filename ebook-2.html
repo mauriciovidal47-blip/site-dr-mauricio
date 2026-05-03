@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Não é preguiça, é hormônio | E-book do Dr. Mauricio Vidal</title>
+<meta name="description" content="O guia da mulher 35+ que sente que o corpo virou outro. Por que você engordou 'do nada' — e o que fazer agora.">
+<meta property="og:title" content="Não é preguiça, é hormônio | Dr. Mauricio Vidal">
+<meta property="og:description" content="O guia da mulher 35+ que sente que o corpo virou outro.">
+<meta property="og:image" content="capa-ebook.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1A1F1A;
+    --paper: #EDE3D6;
+    --paper-deep: #E0D3C0;
+    --petrol: #A04539;
+    --petrol-deep: #7A352B;
+    --white: #FFFFFF;
+    --gold: #C9A96B;
+    --green: #2D3D2A;
+    --rule: rgba(26, 31, 26, 0.12);
+    --muted: rgba(26, 31, 26, 0.6);
+    --display: "Fraunces", Georgia, serif;
+    --sans: "Geist", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    pointer-events: none;
+    z-index: 100;
+    mix-blend-mode: multiply;
+    opacity: 0.5;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  @media (max-width: 720px) {
+    .container { padding: 0 20px; }
+  }
+
+  /* ========= NAV ========= */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    padding: 18px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(237, 227, 214, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .brand {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: -0.01em;
+    font-style: italic;
+  }
+
+  .brand span {
+    font-style: normal;
+    font-weight: 400;
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: block;
+    margin-top: 2px;
+  }
+
+  .nav-back {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-back:hover { color: var(--ink); }
+
+  /* ========= HERO ========= */
+  .hero {
+    min-height: 100vh;
+    padding: 130px 0 80px;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    animation: fadeUp 0.9s ease both;
+  }
+
+  .hero-eyebrow::before {
+    content: "";
+    width: 40px;
+    height: 1px;
+    background: var(--ink);
+  }
+
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(44px, 6.5vw, 96px);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    margin-bottom: 32px;
+    animation: fadeUp 1s 0.1s ease both;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--petrol);
+  }
+
+  .hero-sub {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(20px, 2.4vw, 28px);
+    line-height: 1.35;
+    letter-spacing: -0.015em;
+    margin-bottom: 36px;
+    max-width: 28ch;
+    animation: fadeUp 1s 0.25s ease both;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 36px;
+    padding: 20px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    flex-wrap: wrap;
+    animation: fadeUp 1s 0.4s ease both;
+  }
+
+  .hero-meta div {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    line-height: 1.6;
+  }
+
+  .hero-meta div strong {
+    display: block;
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--ink);
+    text-transform: none;
+    letter-spacing: -0.01em;
+    margin-bottom: 2px;
+  }
+
+  .hero-cta {
+    animation: fadeUp 1s 0.55s ease both;
+  }
+
+  .price-line {
+    margin-bottom: 18px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .price-main {
+    font-family: var(--display);
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(38px, 4.5vw, 52px);
+    color: var(--petrol);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .price-cents {
+    font-family: var(--display);
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(20px, 2vw, 26px);
+    color: var(--petrol);
+  }
+
+  .price-meta {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* Cover */
+  .hero-cover {
+    position: relative;
+    animation: fadeUp 1s 0.3s ease both;
+  }
+
+  .cover-frame {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    aspect-ratio: 3 / 4;
+    background: var(--paper-deep);
+    box-shadow:
+      0 30px 60px rgba(26, 31, 26, 0.18),
+      0 12px 24px rgba(26, 31, 26, 0.08);
+    transform: rotate(-1.5deg);
+    transition: transform 0.5s ease;
+  }
+
+  .cover-frame:hover {
+    transform: rotate(-0.5deg) translateY(-4px);
+  }
+
+  .cover-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Fallback caso a imagem não carregue */
+  .cover-fallback {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 48px 36px;
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .cover-fallback .top {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  .cover-fallback .title {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 38px;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+  }
+
+  .cover-fallback .title em {
+    font-style: italic;
+    color: var(--paper-deep);
+  }
+
+  .cover-fallback .author {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  /* ========= BUTTONS ========= */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 32px;
+    border-radius: 2px;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid var(--ink);
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--sans);
+  }
+
+  .btn:hover {
+    background: var(--petrol);
+    border-color: var(--petrol);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(160, 69, 57, 0.25);
+  }
+
+  .btn .arrow {
+    transition: transform 0.3s ease;
+  }
+
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  .btn-large {
+    padding: 22px 42px;
+    font-size: 14px;
+  }
+
+  .btn-block {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .secure-line {
+    margin-top: 14px;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+  }
+
+  .secure-line svg {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    vertical-align: middle;
+    margin-right: 4px;
+    margin-top: -2px;
+  }
+
+  /* ========= MARQUEE ========= */
+  .marquee {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 18px 0;
+    overflow: hidden;
+    background: var(--paper-deep);
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 48px;
+    animation: scroll 38s linear infinite;
+    white-space: nowrap;
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 22px;
+    color: var(--petrol);
+  }
+
+  .marquee-track span::after {
+    content: "·";
+    margin-left: 48px;
+    color: var(--muted);
+  }
+
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ========= SECTION BASE ========= */
+  section.block {
+    padding: 110px 0;
+    position: relative;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+  }
+
+  .section-label .num {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .section-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+    margin-left: 12px;
+  }
+
+  h2.section-title {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(34px, 5vw, 72px);
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+  }
+
+  h2.section-title em { font-style: italic; color: var(--petrol); }
+
+  .section-lead {
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 56ch;
+    color: var(--ink);
+  }
+
+  /* ========= FOR WHOM ========= */
+  .for-whom {
+    background: var(--paper-deep);
+  }
+
+  .forwhom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 50px;
+  }
+
+  @media (max-width: 720px) {
+    .forwhom-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+
+  .forwhom-col h4 {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 26px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .forwhom-list {
+    list-style: none;
+  }
+
+  .forwhom-list li {
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 14px 0 14px 28px;
+    position: relative;
+    border-bottom: 1px solid rgba(10,10,10,0.08);
+  }
+
+  .forwhom-list li::before {
+    position: absolute;
+    left: 0; top: 14px;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 18px;
+  }
+
+  .forwhom-col.yes .forwhom-list li::before {
+    content: "+";
+    color: var(--petrol);
+  }
+
+  .forwhom-col.no .forwhom-list li::before {
+    content: "−";
+    color: rgba(10,10,10,0.4);
+  }
+
+  .forwhom-col.no .forwhom-list li {
+    color: rgba(10,10,10,0.55);
+  }
+
+  /* ========= CHAPTERS ========= */
+  .chapters-head {
+    max-width: 720px;
+    margin-bottom: 60px;
+  }
+
+  .chapters-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    border-top: 1px solid var(--rule);
+  }
+
+  .chapter {
+    display: grid;
+    grid-template-columns: 100px 1fr 1.6fr;
+    gap: 40px;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+    transition: padding 0.3s ease;
+  }
+
+  .chapter:hover { padding-left: 16px; }
+
+  .chapter-num {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 56px;
+    font-style: italic;
+    color: var(--petrol);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .chapter h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+  }
+
+  .chapter h3 em { font-style: italic; color: var(--petrol); }
+
+  .chapter-body {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+
+  @media (max-width: 720px) {
+    .chapter {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .chapter:hover { padding-left: 0; }
+    .chapter-num { font-size: 42px; }
+  }
+
+  /* ========= AUTHOR ========= */
+  .author {
+    background: var(--petrol);
+    color: var(--paper);
+  }
+
+  .author .section-label { color: rgba(237, 227, 214, 0.6); }
+  .author .section-label .num { color: var(--paper); }
+  .author .section-label::after { background: rgba(237, 227, 214, 0.2); }
+
+  .author h2.section-title em { color: var(--paper-deep); }
+
+  .author-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    align-items: start;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 720px) {
+    .author-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+
+  .author-card {
+    padding: 36px;
+    border: 1px solid rgba(237, 227, 214, 0.25);
+    border-radius: 2px;
+  }
+
+  .author-card .author-name {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 30px;
+    letter-spacing: -0.015em;
+    margin-bottom: 6px;
+  }
+
+  .author-card .author-role {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(237, 227, 214, 0.7);
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+
+  .author-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(237, 227, 214, 0.92);
+    margin-bottom: 14px;
+  }
+
+  .author-text p {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+  }
+
+  .author-text p em { font-style: italic; color: var(--paper-deep); }
+
+  /* ========= SCIENCE ========= */
+  .science {
+    background: var(--paper);
+  }
+
+  .science-grid {
+    display: grid;
+    grid-template-columns: 0.7fr 1fr;
+    gap: 80px;
+    align-items: start;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 720px) {
+    .science-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .science-icon {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(80px, 12vw, 160px);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--petrol);
+  }
+
+  .science-body p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+    max-width: 60ch;
+  }
+
+  .science-body p em {
+    font-style: italic;
+    color: var(--petrol);
+  }
+
+  .science-body p strong { font-weight: 500; }
+
+  .ref-snippet {
+    margin-top: 32px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--muted);
+    font-style: italic;
+    font-family: var(--display);
+    font-weight: 400;
+  }
+
+  .ref-snippet strong {
+    font-style: normal;
+    font-family: var(--sans);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 10px;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  /* ========= GUARANTEE ========= */
+  .guarantee {
+    background: var(--paper-deep);
+  }
+
+  .guarantee-card {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 60px 40px;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    border-radius: 2px;
+    margin-top: 40px;
+  }
+
+  .guarantee-seal {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(80px, 12vw, 140px);
+    line-height: 0.9;
+    color: var(--petrol);
+    letter-spacing: -0.04em;
+    margin-bottom: 16px;
+  }
+
+  .guarantee-seal small {
+    display: block;
+    font-size: 14px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-style: normal;
+    font-family: var(--sans);
+    font-weight: 500;
+    margin-top: 6px;
+  }
+
+  .guarantee-card h3 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(26px, 3.5vw, 40px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+
+  .guarantee-card h3 em { font-style: italic; color: var(--petrol); }
+
+  .guarantee-card p {
+    font-size: 16px;
+    line-height: 1.65;
+    max-width: 50ch;
+    margin: 0 auto;
+    color: var(--ink);
+  }
+
+  /* ========= FAQ ========= */
+  .faq-list {
+    border-top: 1px solid var(--rule);
+    margin-top: 40px;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 28px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    cursor: pointer;
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(20px, 2.3vw, 28px);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    text-align: left;
+    transition: color 0.3s;
+  }
+
+  .faq-question:hover { color: var(--petrol); }
+
+  .faq-toggle {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 32px;
+    font-style: italic;
+    color: var(--petrol);
+    flex-shrink: 0;
+    transition: transform 0.4s ease;
+    line-height: 1;
+  }
+
+  .faq-item.open .faq-toggle { transform: rotate(45deg); }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+
+  .faq-item.open .faq-answer { max-height: 600px; }
+
+  .faq-answer-inner {
+    padding: 0 0 28px;
+    max-width: 62ch;
+  }
+
+  .faq-answer-inner p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+
+  .faq-answer-inner p em { color: var(--petrol); font-style: italic; }
+
+  /* ========= CTA FINAL ========= */
+  .cta-final {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 130px 0 110px;
+    position: relative;
+  }
+
+  .cta-final h2.section-title em { color: var(--paper-deep); }
+
+  .cta-final-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 720px) {
+    .cta-final-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .cta-final p {
+    font-size: 17px;
+    line-height: 1.65;
+    color: rgba(237, 227, 214, 0.85);
+    margin-bottom: 28px;
+    max-width: 50ch;
+  }
+
+  .cta-final .price-main, .cta-final .price-cents {
+    color: var(--paper-deep);
+  }
+
+  .cta-final .price-meta { color: rgba(237, 227, 214, 0.65); }
+
+  .cta-final .btn {
+    background: var(--paper);
+    color: var(--ink);
+    border-color: var(--paper);
+  }
+
+  .cta-final .btn:hover {
+    background: var(--paper-deep);
+    border-color: var(--paper-deep);
+  }
+
+  .cta-final .secure-line {
+    color: rgba(237, 227, 214, 0.6);
+  }
+
+  .cta-final .section-label { color: rgba(237, 227, 214, 0.5); }
+  .cta-final .section-label .num { color: var(--paper); }
+  .cta-final .section-label::after { background: rgba(237, 227, 214, 0.15); }
+
+  /* ========= FOOTER ========= */
+  footer {
+    background: var(--paper);
+    padding: 50px 0 32px;
+    border-top: 1px solid var(--rule);
+  }
+
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  footer .container .disclaimer {
+    max-width: 60ch;
+  }
+
+  footer strong { color: var(--ink); font-weight: 500; }
+
+  /* ========= STICKY BUY ========= */
+  .sticky-buy {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 60;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    border-top: 1px solid rgba(237, 227, 214, 0.15);
+    box-shadow: 0 -8px 24px rgba(0,0,0,0.15);
+  }
+
+  .sticky-buy.show {
+    transform: translateY(0);
+  }
+
+  .sticky-info {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+
+  .sticky-info .sticky-name {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+  }
+
+  .sticky-info .sticky-price {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 22px;
+    color: var(--paper-deep);
+    letter-spacing: -0.01em;
+  }
+
+  .sticky-buy .btn {
+    background: var(--paper);
+    color: var(--ink);
+    border-color: var(--paper);
+    padding: 12px 24px;
+    font-size: 12px;
+  }
+
+  .sticky-buy .btn:hover {
+    background: var(--paper-deep);
+    border-color: var(--paper-deep);
+    transform: none;
+    box-shadow: none;
+  }
+
+  @media (max-width: 560px) {
+    .sticky-buy { padding: 12px 16px; }
+    .sticky-info .sticky-name { display: none; }
+    .sticky-info .sticky-price { font-size: 20px; }
+    .sticky-buy .btn { padding: 11px 18px; font-size: 11px; }
+  }
+
+  /* ========= REVEAL ========= */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  ::selection {
+    background: var(--petrol);
+    color: var(--paper);
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="brand">
+    Dr. Mauricio Vidal
+    <span>Médico · CRM-SP 263079</span>
+  </div>
+  <a href="index.html" class="nav-back">← Voltar ao site</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">Guia prático · 30 dias</div>
+        <h1>
+          Não é<br>
+          <em>preguiça</em>.<br>
+          É <em>hormônio</em>.
+        </h1>
+        <p class="hero-sub">
+          O guia da mulher 35+ que sente que o corpo virou outro. Por que você engordou "do nada" — e o que fazer agora.
+        </p>
+
+        <div class="hero-meta">
+          <div>
+            <strong>8 capítulos</strong>
+            estruturados
+          </div>
+          <div>
+            <strong>30 dias</strong>
+            plano prático
+          </div>
+          <div>
+            <strong>PDF digital</strong>
+            entrega imediata
+          </div>
+        </div>
+
+        <div class="hero-cta">
+          <div class="price-line">
+            <span class="price-main">R$ 47</span>
+            <span class="price-cents">,90</span>
+            <span class="price-meta">à vista · ou em até 12x</span>
+          </div>
+          <a href="https://pay.kiwify.com.br/xaeDYIs" class="btn btn-large" id="ctaHero">
+            Comprar agora
+            <span class="arrow">→</span>
+          </a>
+          <p class="secure-line">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+            Compra 100% segura · Garantia de 7 dias · Acesso imediato
+          </p>
+        </div>
+      </div>
+
+      <div class="hero-cover">
+        <div class="cover-frame">
+          <!--
+            A capa real está em "capa-ebook.png" na mesma pasta deste HTML.
+            Caso falhe ao carregar, exibe o fallback tipográfico abaixo.
+          -->
+          <img src="capa-ebook.png" alt="Capa do e-book Não é preguiça, é hormônio" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="cover-fallback" style="display:none;">
+            <div class="top">E-book · 2026</div>
+            <div class="title">
+              Não é<br>
+              <em>preguiça</em>.<br>
+              É <em>hormônio</em>.
+            </div>
+            <div class="author">Dr. Mauricio Vidal</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Embasamento clínico</span>
+    <span>Linguagem direta</span>
+    <span>Aplicável à rotina real</span>
+    <span>Sem dieta milagrosa</span>
+    <span>Embasamento clínico</span>
+    <span>Linguagem direta</span>
+    <span>Aplicável à rotina real</span>
+    <span>Sem dieta milagrosa</span>
+  </div>
+</div>
+
+<!-- ============ FOR WHOM ============ -->
+<section class="block for-whom">
+  <div class="container">
+    <div class="section-label reveal">
+      <span class="num">01</span>
+      Para quem é
+    </div>
+    <h2 class="section-title reveal">
+      Esse livro é<br>
+      <em>para você</em> — ou<br>
+      não é.
+    </h2>
+    <p class="section-lead reveal">
+      Não é um livro pra todo mundo. É um guia clínico denso, direto e desenhado especificamente para a mulher 35+ que sente que o corpo virou outro. Antes de comprar, leia abaixo se faz sentido para o seu momento.
+    </p>
+
+    <div class="forwhom-grid">
+      <div class="forwhom-col yes reveal">
+        <h4>É para você se</h4>
+        <ul class="forwhom-list">
+          <li>Você é mulher e tem 35 anos ou mais</li>
+          <li>Engordou "do nada" — sem ter mudado o que come</li>
+          <li>A gordura migrou para a barriga, não fica mais no quadril</li>
+          <li>Acorda cansada mesmo dormindo 7-8h</li>
+          <li>A TPM piorou ou o ciclo virou irregular</li>
+          <li>Apareceu vontade de doce que você nunca teve</li>
+          <li>Tem "brain fog" — esquece nomes, perde palavras</li>
+          <li>Já tentou várias dietas e nada mais funciona como antes</li>
+        </ul>
+      </div>
+      <div class="forwhom-col no reveal">
+        <h4>Não é para você se</h4>
+        <ul class="forwhom-list">
+          <li>Procura dieta milagrosa para perder 10kg em 30 dias</li>
+          <li>É homem (esse guia foi feito especificamente para mulheres)</li>
+          <li>Tem menos de 30 anos e nenhum dos sinais acima</li>
+          <li>Quer só uma "lista de alimentos" sem entender o porquê</li>
+          <li>Espera substituir consulta médica individualizada</li>
+          <li>Quer protocolo "copia e cola" de influencer fitness</li>
+          <li>Espera promessa de resultado em prazo fixo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHAPTERS ============ -->
+<section class="block">
+  <div class="container">
+    <div class="section-label reveal">
+      <span class="num">02</span>
+      O que você vai ler
+    </div>
+
+    <div class="chapters-head reveal">
+      <h2 class="section-title">
+        Oito capítulos.<br>
+        Um <em>plano</em> de<br>
+        30 dias.
+      </h2>
+      <p class="section-lead">
+        Estrutura pensada para te levar do diagnóstico ao plano prático, sem rodeios e sem dicas vazias. Linguagem direta, escrita por médico para mulheres reais — com filhos, trabalho, cansaço e energia limitada.
+      </p>
+    </div>
+
+    <div class="chapters-list">
+
+      <div class="chapter reveal">
+        <div class="chapter-num">·</div>
+        <h3>Introdução · Você não está louca. <em>Não é só você</em>.</h3>
+        <div class="chapter-body">
+          O ponto de partida: o que está acontecendo com seu corpo é fisiológico, tem nome, tem motivo e tem tratamento. Não é frescura, não é falta de força de vontade. As três promessas do livro — e por que esse não é mais um manual de dieta.
+        </div>
+      </div>
+
+      <div class="chapter reveal">
+        <div class="chapter-num">I</div>
+        <h3>O que <em>mudou</em> no seu corpo (e por que ninguém te avisou)</h3>
+        <div class="chapter-body">
+          As quatro engrenagens fisiológicas que se desalinham juntas a partir dos 35: queda do estrogênio, perda de massa muscular, resistência à insulina e cortisol crônico. Quando você entender as quatro, tudo o que está acontecendo com você começa a fazer sentido.
+        </div>
+      </div>
+
+      <div class="chapter reveal">
+        <div class="chapter-num">II</div>
+        <h3>Os <em>7 sinais</em> de que é hormônio</h3>
+        <div class="chapter-body">
+          O autodiagnóstico essencial: engordou "do nada", gordura na barriga, cansaço que não passa, sono mudado, TPM/ciclo irregular, vontade de doce nova, brain fog. Tabela de leitura do resultado: o que cada faixa de sinais significa e o que fazer.
+        </div>
+      </div>
+
+      <div class="chapter reveal">
+        <div class="chapter-num">III</div>
+        <h3>Os <em>4 pilares</em> do método</h3>
+        <div class="chapter-body">
+          Proteína (não calorias). Glicemia estável (não restrição). Força (não cardio). Sono profundo (não "dormir mais"). Por que cada pilar foi escolhido — e por que cada um é o oposto do que a indústria do emagrecimento costuma vender.
+        </div>
+      </div>
+
+      <div class="chapter reveal">
+        <div class="chapter-num">IV</div>
+        <h3>Comer pra <em>equilibrar</em> (sem virar nutricionista)</h3>
+        <div class="chapter-body">
+          As 4 regras práticas, o prato simples da mulher 35+, lista de comida segura para ter em casa, cardápio realista de 7 dias, substituições inteligentes e a regra dos 80/20 — o segredo da sustentabilidade.
+        </div>
+      </div>
+
+      <div class="chapter reveal">
+        <div class="chapter-num">V</div>
+        <h3>Movimento que <em>muda hormônio</em></h3>
+        <div class="chapter-body">
+          A verdade sobre cardio depois dos 35. Por que o treino de força é o segredo. Plano completo de 3 dias por semana com Treino A (pernas e glúteos), Treino B (costas e core) e Treino C (full body). Esquema mínimo eficaz de 15 minutos para semanas corridas.
+        </div>
+      </div>
+
+      <div class="chapter reveal">
+        <div class="chapter-num">VI</div>
+        <h3>Sono é <em>remédio</em> (e você está tomando errado)</h3>
+        <div class="chapter-body">
+          Por que o sono virou difícil agora. Protocolo de 7 hábitos para reativar o sono profundo. O que fazer se você acorda às 3h. Suplementação básica para sono — magnésio, melatonina, L-teanina, glicina — e quando o sono não melhora apenas com hábitos.
+        </div>
+      </div>
+
+      <div class="chapter reveal">
+        <div class="chapter-num">VII</div>
+        <h3>Quando o e-book <em>não basta</em></h3>
+        <div class="chapter-body">
+          Sinais de que você precisa de médico antes de continuar. O painel completo de exames para pedir (base, hormonal e ginecológico). Tratamentos disponíveis explicados em linguagem informativa: TRH, análogos de GLP-1, metformina. Como escolher um médico que te leve a sério.
+        </div>
+      </div>
+
+      <div class="chapter reveal">
+        <div class="chapter-num">VIII</div>
+        <h3>Seu <em>plano de 30 dias</em></h3>
+        <div class="chapter-body">
+          Quatro semanas, uma de cada vez. Semana 1 prepara o ambiente. Semana 2 implementa proteína. Semana 3 adiciona movimento. Semana 4 refina e sustenta. Mudança em camadas, não tudo no dia 1. Mais quatro anexos práticos — lista de compras, checklist semanal, frases para si mesma e tabela de quando se cobrar e quando se poupar.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ AUTHOR ============ -->
+<section class="block author">
+  <div class="container">
+    <div class="section-label reveal">
+      <span class="num">03</span>
+      Sobre o autor
+    </div>
+
+    <h2 class="section-title reveal">
+      Escrito por<br>
+      um <em>médico</em>.<br>
+      Não por um coach.
+    </h2>
+
+    <div class="author-grid">
+      <div class="author-card reveal">
+        <div class="author-name">Dr. Mauricio Vidal</div>
+        <div class="author-role">Médico · CRM-SP 263079</div>
+        <p>Atuação clínica em emagrecimento individualizado, com abordagem baseada em investigação, diagnóstico e estratégia construída a partir do caso de cada paciente.</p>
+        <p>Atendimento online para mulheres de todo o Brasil em transição hormonal — perimenopausa, menopausa e fases anteriores.</p>
+      </div>
+      <div class="author-text reveal">
+        <p>
+          Eu vejo, todos os dias no consultório, mulheres inteligentes, disciplinadas, comprometidas — e <em>ainda assim travadas</em>.
+        </p>
+        <p>
+          A maioria carrega anos de tentativas frustradas, dietas restritivas, autoacusações, exames "normais" que não explicam por que tudo parece mais difícil depois dos 35.
+        </p>
+        <p>
+          Esse e-book é o conteúdo que eu queria que tivesse <em>caído nas mãos delas</em> 5 ou 10 anos antes.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROMESSAS ============ -->
+<section class="block science">
+  <div class="container">
+    <div class="section-label reveal">
+      <span class="num">04</span>
+      Três promessas
+    </div>
+
+    <h2 class="section-title reveal">
+      O que esse livro<br>
+      <em>te entrega</em>.<br>
+      Sem rodeios.
+    </h2>
+
+    <div class="science-grid">
+      <div class="science-icon reveal">
+        ¹²³
+      </div>
+      <div class="science-body reveal">
+        <p>
+          Esse e-book tem três promessas — e nenhuma delas é "perca 10 kg em 30 dias". A maioria das mulheres que chega ao consultório aos 40 passou os últimos 5 a 10 anos brigando sozinha com o próprio corpo. <em>Esse não é o seu caminho.</em>
+        </p>
+        <p>
+          <strong>Promessa 1.</strong> Você vai entender, em linguagem clara, o que mudou no seu corpo depois dos 35. Sem jargão médico. Sem mistério.
+        </p>
+        <p>
+          <strong>Promessa 2.</strong> Você vai sair com um plano prático de 30 dias — alimentação, movimento e sono — desenhado para a mulher real, com filhos, trabalho e cansaço. Não para a influencer que treina 2h por dia.
+        </p>
+        <p>
+          <strong>Promessa 3.</strong> Você vai saber identificar quando o problema é maior do que um e-book resolve, e o que pedir ao seu médico se for o caso.
+        </p>
+
+        <div class="ref-snippet">
+          <strong>O que vai mudar em 30 dias</strong>
+          Você provavelmente não vai perder 10 kg. Pode perder 2 a 4 kg, dependendo do ponto de partida. Mas vai perceber: roupas servindo melhor, energia diferente ao acordar, fome controlada, vontade de doce reduzida. E vai ter um sistema sustentável que continua funcionando além dos 30 dias.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GUARANTEE ============ -->
+<section class="block guarantee">
+  <div class="container">
+    <div class="guarantee-card reveal">
+      <div class="guarantee-seal">
+        7
+        <small>dias de garantia</small>
+      </div>
+      <h3>
+        Se não fizer<br>
+        sentido pra você,<br>
+        <em>devolvemos 100%</em>.
+      </h3>
+      <p>
+        Você tem 7 dias após a compra para revisar o conteúdo. Se sentir que o material não atende ao prometido, basta solicitar o reembolso — devolvemos integralmente, sem perguntas.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="block">
+  <div class="container">
+    <div class="section-label reveal">
+      <span class="num">05</span>
+      Dúvidas frequentes
+    </div>
+
+    <h2 class="section-title reveal">
+      Antes que<br>
+      você <em>pergunte</em>.
+    </h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Esse e-book serve para mim se eu tiver menos de 35 anos?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>O conteúdo foi escrito <em>especificamente</em> para a mulher 35+ em transição hormonal — perimenopausa, pré-menopausa e menopausa. Mulheres mais jovens com sinais de resistência insulínica, SOP ou desequilíbrio hormonal também podem se beneficiar, mas a estrutura toda do livro foi pensada para a fase 35+.</p>
+            <p>Se você não tem nenhum dos 7 sinais do Capítulo 2, esse provavelmente não é o livro certo para o seu momento.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>O e-book substitui uma consulta médica?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Não — e nunca foi essa a intenção. Há um capítulo inteiro (o Capítulo 7 — "Quando o e-book não basta") dedicado a te ajudar a identificar quando você precisa de avaliação médica antes de seguir sozinha. Inclui o painel completo de exames a pedir e como escolher um médico que te leve a sério.</p>
+            <p>Pense no e-book como o livro-base. A consulta aplica esses princípios ao seu caso específico. Os dois se complementam — não se substituem.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Em quanto tempo recebo o e-book?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Imediatamente após a confirmação do pagamento. Você recebe o link de download por e-mail em poucos minutos. Se não chegar na caixa de entrada em até 10 minutos, verifique a caixa de spam ou nos chame no WhatsApp.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Quais formas de pagamento são aceitas?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Aceitamos Pix (à vista) e cartão de crédito (com parcelamento em até 12 vezes). O processamento é seguro, feito pela plataforma Kiwify.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Vou conseguir aplicar com a minha rotina corrida?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Sim — esse foi o critério central do livro. Tudo nele foi pensado para a <em>mulher real</em>, com filhos, trabalho e energia limitada, e não para quem tem 2 horas livres por dia para academia.</p>
+            <p>O capítulo de movimento, por exemplo, traz um esquema mínimo eficaz de 15 minutos, 3 vezes por semana, para semanas em que nem 30 minutos cabem. A regra dos 80/20 (acertar 80% das refeições, deixar 20% para a vida real) está em todos os capítulos.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Vou ter que cortar carboidrato, fazer jejum ou dieta restritiva?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Não. O livro defende explicitamente o <em>oposto</em>: glicemia estável (não restrição), proteína suficiente (não calorias contadas), comer carboidrato sempre acompanhado de proteína ou gordura. Sem cortar grupos alimentares, sem fome, sem virar nutricionista.</p>
+            <p>Se você procura dieta restritiva ou jejum prolongado, esse não é o livro.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>O livro fala sobre TRH (reposição hormonal) e Ozempic?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Sim. O Capítulo 7 inclui uma seção informativa sobre os tratamentos médicos disponíveis para a transição hormonal: <em>Terapia de Reposição Hormonal (TRH), análogos de GLP-1 (semaglutida, tirzepatida), metformina e suplementação direcionada</em>.</p>
+            <p>É linguagem informativa para que você entenda do que se trata e possa discutir com seu médico — nunca prescrição. A decisão é sempre clínica e individual.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>E se eu não gostar?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Você tem <em>7 dias após a compra</em> para solicitar reembolso integral, conforme o Código de Defesa do Consumidor. Basta nos enviar uma mensagem dentro desse prazo e devolvemos 100% do valor — sem perguntas.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Posso ler no celular?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Sim. O arquivo é em formato PDF, lido em qualquer dispositivo: celular, tablet, computador, Kindle. A diagramação foi pensada para boa leitura em tela pequena também.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="cta-final">
+  <div class="container">
+    <div class="section-label reveal">
+      <span class="num">06</span>
+      Garanta agora
+    </div>
+
+    <h2 class="section-title reveal">
+      Pare de se<br>
+      culpar por algo<br>
+      que é <em>fisiologia</em>.
+    </h2>
+
+    <div class="cta-final-grid">
+      <p class="reveal">
+        Você não está louca. Não é só você. O que acontece com seu corpo depois dos 35 tem nome, tem motivo e tem solução. As próximas páginas vão te explicar — e te entregar um plano prático de 30 dias pensado para a mulher real, sem julgamento e sem fórmula milagrosa.
+      </p>
+      <div class="reveal">
+        <div class="price-line">
+          <span class="price-main">R$ 47</span>
+          <span class="price-cents">,90</span>
+          <span class="price-meta">à vista · ou em até 12x</span>
+        </div>
+        <a href="https://pay.kiwify.com.br/xaeDYIs" class="btn btn-large" id="ctaFinal">
+          Quero o e-book agora
+          <span class="arrow">→</span>
+        </a>
+        <p class="secure-line">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+          Pagamento seguro via Kiwify · Acesso imediato · Garantia de 7 dias
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="disclaimer">
+      <strong>Dr. Mauricio Vidal</strong> · Médico · CRM-SP 263079<br>
+      © 2026 · Conteúdo educativo digital. Não substitui consulta médica individual nem estabelece relação médico-paciente. As informações são baseadas em literatura científica vigente e refletem a abordagem clínica do autor.
+    </div>
+    <div>
+      <a href="index.html">Voltar ao site</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STICKY BUY ============ -->
+<div class="sticky-buy" id="stickyBuy">
+  <div class="sticky-info">
+    <span class="sticky-name">Não é preguiça, é hormônio</span>
+    <span class="sticky-price">R$ 47,90</span>
+  </div>
+  <a href="https://pay.kiwify.com.br/xaeDYIs" class="btn">
+    Comprar agora →
+  </a>
+</div>
+
+<script>
+  // Reveal animations
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Sticky buy bar — appears after user scrolls past hero
+  const stickyBuy = document.getElementById('stickyBuy');
+  const hero = document.querySelector('.hero');
+
+  function checkSticky() {
+    const heroBottom = hero.getBoundingClientRect().bottom;
+    if (heroBottom < 0) {
+      stickyBuy.classList.add('show');
+    } else {
+      stickyBuy.classList.remove('show');
+    }
+  }
+
+  window.addEventListener('scroll', checkSticky, { passive: true });
+  checkSticky();
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>

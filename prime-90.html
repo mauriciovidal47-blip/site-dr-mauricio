@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18087163060"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18087163060');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acompanhamento de 90 dias · PRIME 90 | Dr. Mauricio Vidal</title>
+<meta name="description" content="Programa estruturado de acompanhamento médico em emagrecimento clínico. 3 meses, 5 encontros, suporte direto. Para quem busca tratamento sério, não mais uma tentativa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0A0A0A;
+    --paper: #F5F0E8;
+    --paper-deep: #E8DFD3;
+    --petrol: #1B3A4B;
+    --petrol-deep: #0E2632;
+    --white: #FFFFFF;
+    --rule: rgba(10, 10, 10, 0.12);
+    --muted: rgba(10, 10, 10, 0.6);
+    --display: "Fraunces", Georgia, serif;
+    --sans: "Geist", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    pointer-events: none;
+    z-index: 100;
+    mix-blend-mode: multiply;
+    opacity: 0.5;
+  }
+  a { color: inherit; text-decoration: none; }
+  .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+  @media (max-width: 720px) { .container { padding: 0 20px; } }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    padding: 20px 32px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(245, 240, 232, 0.85);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .brand { font-family: var(--display); font-weight: 500; font-size: 18px; letter-spacing: -0.01em; font-style: italic; }
+  .brand span { font-style: normal; font-weight: 400; font-family: var(--sans); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); display: block; margin-top: 2px; }
+  .nav-links { display: flex; gap: 32px; font-size: 13px; font-weight: 500; letter-spacing: 0.02em; }
+  .nav-links a { position: relative; padding-bottom: 2px; }
+  .nav-links a::after { content: ""; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--ink); transition: width 0.3s ease; }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta { padding: 10px 18px; background: var(--ink); color: var(--paper); border-radius: 2px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--petrol); }
+  @media (max-width: 860px) { .nav-links { display: none; } }
+
+  /* HERO */
+  .hero { min-height: 100vh; padding: 140px 0 80px; display: flex; align-items: center; position: relative; overflow: hidden; }
+  .hero-eyebrow { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin-bottom: 40px; display: flex; align-items: center; gap: 12px; font-weight: 500; animation: fadeUp 0.9s ease both; }
+  .hero-eyebrow::before { content: ""; width: 40px; height: 1px; background: var(--ink); }
+  .hero h1 { font-family: var(--display); font-weight: 300; font-size: clamp(48px, 8vw, 124px); line-height: 0.95; letter-spacing: -0.035em; margin-bottom: 48px; animation: fadeUp 1s 0.1s ease both; }
+  .hero h1 em { font-style: italic; font-weight: 300; color: var(--petrol); }
+  .hero-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding-top: 32px; border-top: 1px solid var(--rule); animation: fadeUp 1s 0.3s ease both; }
+  .hero-meta p { font-size: 17px; line-height: 1.55; max-width: 52ch; color: var(--ink); }
+  .hero-meta .credential { font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); font-weight: 500; line-height: 1.8; }
+  .hero-cta-row { margin-top: 48px; display: flex; gap: 20px; flex-wrap: wrap; animation: fadeUp 1s 0.5s ease both; }
+  .btn { display: inline-flex; align-items: center; gap: 12px; padding: 18px 32px; border-radius: 2px; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; transition: all 0.3s ease; cursor: pointer; border: 1px solid var(--ink); }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--petrol); border-color: var(--petrol); transform: translateY(-2px); }
+  .btn-ghost { background: transparent; color: var(--ink); }
+  .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+  .btn .arrow { transition: transform 0.3s ease; }
+  .btn:hover .arrow { transform: translateX(4px); }
+  @media (max-width: 720px) { .hero-meta { grid-template-columns: 1fr; gap: 28px; } .hero-cta-row { flex-direction: column; } .btn { justify-content: center; } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* MARQUEE */
+  .marquee { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 20px 0; overflow: hidden; background: var(--paper-deep); }
+  .marquee-track { display: flex; gap: 48px; animation: scroll 40s linear infinite; white-space: nowrap; font-family: var(--display); font-style: italic; font-weight: 300; font-size: 22px; color: var(--petrol); }
+  .marquee-track span::after { content: "·"; margin-left: 48px; color: var(--muted); }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* SECTIONS */
+  section { padding: 120px 0; position: relative; }
+  .section-label { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin-bottom: 48px; display: flex; align-items: center; gap: 12px; font-weight: 500; }
+  .section-label .num { font-family: var(--display); font-style: italic; font-size: 14px; color: var(--ink); }
+  .section-label::after { content: ""; flex: 1; height: 1px; background: var(--rule); margin-left: 12px; }
+  h2.section-title { font-family: var(--display); font-weight: 300; font-size: clamp(38px, 5.5vw, 82px); line-height: 1.0; letter-spacing: -0.03em; margin-bottom: 32px; }
+  h2.section-title em { font-style: italic; color: var(--petrol); }
+
+  /* PARA QUEM */
+  .for-whom { background: var(--petrol); color: var(--paper); }
+  .for-whom .section-label { color: rgba(245, 240, 232, 0.6); }
+  .for-whom .section-label .num { color: var(--paper); }
+  .for-whom .section-label::after { background: rgba(245, 240, 232, 0.2); }
+  .for-whom h2.section-title em { color: var(--paper-deep); }
+  .for-whom .lead { font-family: var(--display); font-weight: 300; font-size: clamp(20px, 2.4vw, 28px); line-height: 1.4; letter-spacing: -0.015em; margin-bottom: 60px; max-width: 38ch; color: rgba(245, 240, 232, 0.92); }
+  .for-whom .lead em { font-style: italic; color: var(--paper-deep); }
+  .forwhom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+  .forwhom-col h4 { font-family: var(--display); font-style: italic; font-weight: 300; font-size: 28px; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid rgba(245, 240, 232, 0.25); }
+  .forwhom-list { list-style: none; }
+  .forwhom-list li { font-size: 17px; line-height: 1.5; padding: 18px 0 18px 32px; position: relative; border-bottom: 1px solid rgba(245, 240, 232, 0.12); }
+  .forwhom-list li::before { position: absolute; left: 0; top: 18px; font-family: var(--display); font-style: italic; font-size: 20px; }
+  .forwhom-col.yes .forwhom-list li::before { content: "+"; color: var(--paper-deep); }
+  .forwhom-col.no .forwhom-list li::before { content: "−"; color: rgba(245, 240, 232, 0.4); }
+  .forwhom-col.no .forwhom-list li { color: rgba(245, 240, 232, 0.6); }
+  @media (max-width: 860px) { .forwhom-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+  /* O QUE INCLUI */
+  .includes-intro { max-width: 640px; margin-bottom: 80px; }
+  .includes-intro p { font-size: 18px; line-height: 1.6; color: var(--ink); }
+  .includes-intro p em { font-style: italic; color: var(--petrol); }
+  .includes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border-top: 1px solid var(--rule); }
+  .include-item { padding: 48px 40px 48px 0; border-bottom: 1px solid var(--rule); }
+  .include-item:nth-child(odd) { border-right: 1px solid var(--rule); }
+  .include-item:nth-child(even) { padding-left: 40px; padding-right: 0; }
+  .include-num { font-family: var(--display); font-weight: 300; font-style: italic; font-size: 36px; color: var(--petrol); display: block; margin-bottom: 20px; line-height: 1; }
+  .include-item h3 { font-family: var(--display); font-weight: 400; font-size: 26px; line-height: 1.2; letter-spacing: -0.015em; margin-bottom: 16px; }
+  .include-item p { font-size: 15px; line-height: 1.65; color: var(--ink); }
+  @media (max-width: 860px) { .includes-grid { grid-template-columns: 1fr; } .include-item, .include-item:nth-child(even) { padding: 40px 0; border-right: none; } }
+
+  /* TIMELINE 90 DIAS */
+  .timeline { background: var(--paper-deep); }
+  .timeline-intro { max-width: 640px; margin-bottom: 80px; }
+  .timeline-intro p { font-size: 18px; line-height: 1.6; color: var(--ink); }
+  .timeline-intro p em { font-style: italic; color: var(--petrol); }
+  .timeline-steps { display: grid; grid-template-columns: 1fr; gap: 0; }
+  .timeline-step { display: grid; grid-template-columns: 160px 1fr 2fr; gap: 40px; padding: 48px 0; border-top: 1px solid var(--rule); align-items: start; transition: padding 0.3s ease; }
+  .timeline-step:last-child { border-bottom: 1px solid var(--rule); }
+  .timeline-step:hover { padding-left: 16px; }
+  .timeline-step-num { font-family: var(--display); font-weight: 300; font-size: 22px; font-style: italic; color: var(--petrol); line-height: 1.2; letter-spacing: -0.01em; }
+  .timeline-step-num strong { display: block; font-size: 56px; font-weight: 300; color: var(--petrol); line-height: 1; margin-bottom: 8px; letter-spacing: -0.02em; }
+  .timeline-step h3 { font-family: var(--display); font-weight: 400; font-size: 28px; line-height: 1.15; letter-spacing: -0.015em; }
+  .timeline-step-body p { font-size: 16px; line-height: 1.7; color: var(--ink); margin-bottom: 16px; }
+  .timeline-step-body p em { font-style: italic; color: var(--petrol); }
+  .timeline-step-body ul { list-style: none; padding-top: 12px; }
+  .timeline-step-body ul li { font-size: 14px; color: var(--muted); line-height: 1.7; padding-left: 20px; position: relative; }
+  .timeline-step-body ul li::before { content: "—"; position: absolute; left: 0; color: var(--petrol); }
+  @media (max-width: 860px) { .timeline-step { grid-template-columns: 1fr; gap: 20px; } .timeline-step:hover { padding-left: 0; } }
+
+  /* INVESTIMENTO */
+  .investment { padding: 140px 0; }
+  .investment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; }
+  .investment-lead h2 { font-family: var(--display); font-weight: 300; font-size: clamp(38px, 5.5vw, 76px); line-height: 1.0; letter-spacing: -0.03em; margin-bottom: 32px; }
+  .investment-lead h2 em { font-style: italic; color: var(--petrol); }
+  .investment-lead p { font-family: var(--display); font-weight: 300; font-size: 22px; line-height: 1.5; color: var(--ink); margin-bottom: 24px; max-width: 38ch; }
+  .investment-lead p em { font-style: italic; color: var(--petrol); }
+  .investment-card { background: var(--paper-deep); padding: 48px 44px; border: 1px solid var(--rule); border-radius: 2px; }
+  .investment-tag { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; font-weight: 500; }
+  .investment-card h3 { font-family: var(--display); font-weight: 400; font-size: 32px; line-height: 1.15; letter-spacing: -0.015em; margin-bottom: 8px; }
+  .investment-card .subtitle { font-size: 14px; color: var(--muted); margin-bottom: 36px; letter-spacing: 0.02em; }
+  .investment-rows { border-top: 1px solid var(--rule); }
+  .investment-row { display: flex; justify-content: space-between; align-items: baseline; padding: 18px 0; border-bottom: 1px solid var(--rule); font-size: 14px; }
+  .investment-row .label { color: var(--muted); letter-spacing: 0.02em; }
+  .investment-row .value { font-family: var(--display); font-style: italic; font-weight: 400; font-size: 18px; color: var(--ink); }
+  .investment-row.total { padding: 24px 0 8px; border-bottom: none; }
+  .investment-row.total .label { font-family: var(--display); font-style: italic; font-size: 16px; color: var(--ink); }
+  .investment-row.total .value { font-family: var(--display); font-weight: 300; font-style: italic; font-size: 38px; color: var(--petrol); letter-spacing: -0.015em; }
+  .investment-card .note { font-size: 12px; line-height: 1.7; color: var(--muted); margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--rule); }
+  .investment-card .note em { font-style: italic; color: var(--petrol); }
+  .investment-cta { margin-top: 32px; }
+  @media (max-width: 960px) { .investment-grid { grid-template-columns: 1fr; gap: 60px; } .investment-card { padding: 36px 28px; } }
+
+  /* CTA FINAL */
+  .cta-final { background: var(--ink); color: var(--paper); padding: 160px 0; }
+  .cta-final .section-label { color: rgba(245, 240, 232, 0.5); }
+  .cta-final .section-label .num { color: var(--paper); }
+  .cta-final .section-label::after { background: rgba(245, 240, 232, 0.15); }
+  .cta-final h2 { font-family: var(--display); font-weight: 300; font-size: clamp(44px, 7vw, 104px); line-height: 0.98; letter-spacing: -0.035em; margin-bottom: 60px; max-width: 14ch; }
+  .cta-final h2 em { font-style: italic; color: var(--paper-deep); }
+  .cta-final-body { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; padding-top: 40px; border-top: 1px solid rgba(245, 240, 232, 0.15); }
+  .cta-final-body p { font-size: 17px; line-height: 1.65; color: rgba(245, 240, 232, 0.85); max-width: 50ch; }
+  .cta-final .btn-primary { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+  .cta-final .btn-primary:hover { background: var(--paper-deep); border-color: var(--paper-deep); }
+  .cta-final .btn-ghost { color: var(--paper); border-color: rgba(245, 240, 232, 0.4); }
+  .cta-final .btn-ghost:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+  @media (max-width: 860px) { .cta-final-body { grid-template-columns: 1fr; gap: 40px; } }
+
+  /* FOOTER */
+  footer { background: var(--paper); padding: 80px 0 40px; border-top: 1px solid var(--rule); }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+  .footer-brand .brand { font-size: 26px; }
+  .footer-brand p { font-size: 13px; line-height: 1.7; color: var(--muted); max-width: 38ch; margin-top: 20px; }
+  .footer-col h5 { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; font-weight: 500; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; font-size: 14px; }
+  .footer-col ul li a:hover { color: var(--petrol); }
+  .footer-bottom { padding-top: 32px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; font-size: 12px; color: var(--muted); }
+  .footer-bottom .disclaimer { max-width: 60ch; line-height: 1.6; }
+  @media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
+  @media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s ease, transform 0.9s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  ::selection { background: var(--petrol); color: var(--paper); }
+
+  .whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 999; background: #25D366; color: white; border-radius: 50px; padding: 14px 20px; font-size: 14px; font-weight: 500; letter-spacing: 0.02em; box-shadow: 0 8px 20px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; text-decoration: none; }
+  .whatsapp-float:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,0.28); background: #1fb855; }
+  .whatsapp-float svg { width: 20px; height: 20px; fill: currentColor; }
+  @media (max-width: 600px) { .whatsapp-float { padding: 12px 16px; font-size: 13px; bottom: 16px; right: 16px; } .whatsapp-float svg { width: 18px; height: 18px; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">
+    Dr. Mauricio Vidal
+    <span>Emagrecimento clínico CRM-SP 263079</span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html#manifesto">Filosofia</a>
+    <a href="index.html#metodo">Método</a>
+    <a href="index.html#artigos">Jornal</a>
+    <a href="index.html#perguntas">Dúvidas</a>
+  </div>
+  <a href="#consulta" class="nav-cta">Quero entender meu caso</a>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">Acompanhamento clínico · 90 dias</div>
+    <h1>
+      Três meses<br>
+      para <em>entender</em> o seu corpo<br>
+      e <em>reorganizar</em><br>
+      o seu metabolismo.
+    </h1>
+    <div class="hero-meta">
+      <div>
+        <p>O <strong>PRIME 90</strong> é o programa estruturado de acompanhamento médico em emagrecimento clínico. Pensado para quem precisa de método contínuo — não consulta isolada.</p>
+        <p style="margin-top: 20px;">Em 90 dias, fazemos a investigação completa, definimos a estratégia individualizada e ajustamos o tratamento de perto, com encontros próximos e canal direto entre os atendimentos.</p>
+      </div>
+      <div class="credential">
+        Programa de 3 meses<br>
+        5 encontros com o médico<br>
+        Suporte direto por WhatsApp<br>
+        Atendimento online · Brasil
+      </div>
+    </div>
+    <div class="hero-cta-row">
+      <a href="https://wa.me/5511950792425?text=Olá,%20Dr.%20Mauricio.%20Vim%20pelo%20Google%20e%20quero%20saber%20mais%20sobre%20o%20PRIME%2090." target="_blank" rel="noopener" class="btn btn-primary">Quero entender meu caso <span class="arrow">→</span></a>
+      <a href="#programa" class="btn btn-ghost">Como funciona o programa</a>
+    </div>
+    <p class="credential" style="font-size: 11px; line-height: 1.7; margin-top: 28px; max-width: 52ch;">Vagas limitadas por mês. Programa não destinado a consultas isoladas — apenas a pacientes que aceitam acompanhamento contínuo.</p>
+  </div>
+</header>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Investigação antes de prescrição</span><span>Cada caso é um caso</span><span>Método, não milagre</span><span>Acompanhamento contínuo</span><span>Investigação antes de prescrição</span><span>Cada caso é um caso</span><span>Método, não milagre</span><span>Acompanhamento contínuo</span>
+  </div>
+</div>
+
+<!-- PARA QUEM É -->
+<section class="for-whom">
+  <div class="container">
+    <div class="section-label reveal"><span class="num">01</span>Para quem é o programa</div>
+    <h2 class="section-title reveal">Programa estruturado<br>para quem busca <em>tratamento</em>,<br>não mais uma tentativa.</h2>
+    <p class="lead reveal">O PRIME 90 não é para qualquer paciente. É para quem aceita que <em>emagrecer de verdade</em> exige tempo, método e acompanhamento próximo.</p>
+    <div class="forwhom-grid">
+      <div class="forwhom-col yes reveal">
+        <h4>Indicado para você, se</h4>
+        <ul class="forwhom-list">
+          <li>Já tentou várias dietas e sempre recuperou o peso.</li>
+          <li>Sente que dieta sozinha não funciona mais.</li>
+          <li>Tem rotina intensa — filhos, trabalho, pouco tempo para si.</li>
+          <li>Ganhou peso após gravidez e não conseguiu reverter.</li>
+          <li>Sente fome constante, cansaço crônico e baixa energia.</li>
+          <li>Suspeita de alteração hormonal ou resistência à insulina.</li>
+          <li>Quer entender o próprio corpo, não só receber dieta.</li>
+          <li>Aceita acompanhamento contínuo de 3 meses.</li>
+        </ul>
+      </div>
+      <div class="forwhom-col no reveal">
+        <h4>Não é o programa, se</h4>
+        <ul class="forwhom-list">
+          <li>Procura consulta avulsa para uma orientação rápida.</li>
+          <li>Quer perder 10 kg em 30 dias.</li>
+          <li>Quer Ozempic ou Mounjaro sem investigação prévia.</li>
+          <li>Não aceita realizar exames laboratoriais.</li>
+          <li>Não tem disposição para encontros mensais.</li>
+          <li>Espera resultado sem ajustar sono, estresse e rotina.</li>
+          <li>Busca dieta pronta para seguir sozinha.</li>
+          <li>Procura promessa de prazo fixo e garantia de resultado.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE ESTÁ INCLUÍDO -->
+<section id="programa">
+  <div class="container">
+    <div class="section-label reveal"><span class="num">02</span>O que está incluído</div>
+    <h2 class="section-title reveal">Tudo que o tratamento<br>realmente <em>precisa</em>.</h2>
+    <div class="includes-intro reveal">
+      <p>O programa é estruturado em <em>cinco encontros médicos</em> ao longo de 90 dias, com canal direto para dúvidas entre os atendimentos. Sem cobrança extra por encontro, sem surpresa no meio do caminho.</p>
+    </div>
+    <div class="includes-grid">
+      <div class="include-item reveal">
+        <span class="include-num">i.</span>
+        <h3>Avaliação inicial estendida</h3>
+        <p>Consulta de 60 a 90 minutos para entender histórico clínico completo, alimentação real, sono, rotina, tentativas anteriores e queixas atuais. A base de tudo que vem depois.</p>
+      </div>
+      <div class="include-item reveal">
+        <span class="include-num">ii.</span>
+        <h3>4 encontros de seguimento</h3>
+        <p>Após a avaliação inicial, novos encontros aos 14 dias, 1 mês, 2 meses e 3 meses — para revisar exames, ajustar a estratégia, avaliar resposta clínica e refinar a conduta conforme o seu corpo responde, não conforme um protocolo pronto.</p>
+      </div>
+      <div class="include-item reveal">
+        <span class="include-num">iii.</span>
+        <h3>Solicitação e leitura de exames</h3>
+        <p>Painel laboratorial dirigido — incluindo o que a maioria não pede: insulina de jejum, HOMA-IR, perfil tireoidiano completo, vitaminas, ferritina. Investigação clínica com hipótese, não bateria genérica.</p>
+      </div>
+      <div class="include-item reveal">
+        <span class="include-num">iv.</span>
+        <h3>Estratégia individualizada</h3>
+        <p>Plano alimentar com lógica explicada, ajustes de sono e comportamento, e — quando houver indicação clínica — prescrição medicamentosa criteriosa, incluindo análogos de GLP-1 quando apropriado.</p>
+      </div>
+      <div class="include-item reveal">
+        <span class="include-num">v.</span>
+        <h3>Suporte direto por WhatsApp</h3>
+        <p>Canal direto para dúvidas pontuais entre os encontros, dentro de horários e escopo combinados. Evita o "não posso esperar um mês para tirar essa dúvida" que desorganiza tratamento.</p>
+      </div>
+      <div class="include-item reveal">
+        <span class="include-num">vi.</span>
+        <h3>Acompanhamento próximo de verdade</h3>
+        <p>Número limitado de pacientes em programa por mês — para que cada caso receba atenção real. Você não é mais um número numa agenda lotada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE 90 DIAS -->
+<section class="timeline">
+  <div class="container">
+    <div class="section-label reveal"><span class="num">03</span>Como acontecem os 90 dias</div>
+    <h2 class="section-title reveal">A jornada<br>em <em>cinco encontros</em>.</h2>
+    <div class="timeline-intro reveal">
+      <p>Cada fase tem objetivo clínico específico. Não é "ir consultando" — é uma sequência <em>desenhada</em> para que cada encontro construa em cima do anterior.</p>
+    </div>
+    <div class="timeline-steps">
+      <div class="timeline-step reveal">
+        <div class="timeline-step-num"><strong>D-0</strong>1º encontro</div>
+        <h3>Avaliação inicial e conduta</h3>
+        <div class="timeline-step-body">
+          <p>Conversa longa, sem pressa. Histórico, queixas, padrão alimentar real, sono, intestino, humor, medicações em uso, tentativas anteriores. Já saímos com <em>conduta inicial estabelecida</em> — orientações alimentares, ajustes comportamentais e, quando o quadro clínico já permite, início da farmacoterapia.</p>
+          <ul>
+            <li>Anamnese clínica completa</li>
+            <li>Conduta inicial já no primeiro encontro</li>
+            <li>Solicitação de exames complementares quando necessário</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-step reveal">
+        <div class="timeline-step-num"><strong>14 dias</strong>2º encontro</div>
+        <h3>Refinamento com exames</h3>
+        <div class="timeline-step-body">
+          <p>Com exames recém-chegados em mãos, fechamos o raciocínio clínico e refinamos a estratégia. Aqui se ajusta a conduta inicial, se introduz ou se modifica farmacoterapia conforme o que os exames revelam. Sempre com critério.</p>
+          <ul>
+            <li>Interpretação completa dos exames</li>
+            <li>Refinamento do plano alimentar</li>
+            <li>Ajuste ou introdução de farmacoterapia conforme indicação</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-step reveal">
+        <div class="timeline-step-num"><strong>1 mês</strong>3º encontro</div>
+        <h3>Primeira reavaliação de resposta</h3>
+        <div class="timeline-step-body">
+          <p>Avaliamos a resposta clínica das primeiras semanas: energia, saciedade, sono, padrão alimentar e tolerância à conduta proposta. Pequenos ajustes precoces evitam grandes correções de rota.</p>
+          <ul>
+            <li>Avaliação de tolerância e adesão</li>
+            <li>Ajustes finos da conduta</li>
+            <li>Refinamento da estratégia</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-step reveal">
+        <div class="timeline-step-num"><strong>2 meses</strong>4º encontro</div>
+        <h3>Ajustes intermediários</h3>
+        <div class="timeline-step-body">
+          <p>Avaliamos resposta clínica consolidada: composição corporal, sintomas, energia, qualidade de sono e comportamento alimentar. Ajustamos o que não está funcionando, reforçamos o que está.</p>
+          <ul>
+            <li>Reavaliação de composição corporal</li>
+            <li>Ajustes de plano alimentar e medicação</li>
+            <li>Definição da reta final do programa</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-step reveal">
+        <div class="timeline-step-num"><strong>3 meses</strong>5º encontro</div>
+        <h3>Consolidação e novos exames</h3>
+        <div class="timeline-step-body">
+          <p>Repetição dos exames-chave para avaliar o impacto metabólico real do tratamento. Não só peso, mas <em>parâmetros bioquímicos</em>: insulina, perfil hormonal, marcadores inflamatórios.</p>
+          <ul>
+            <li>Reavaliação laboratorial dirigida</li>
+            <li>Consolidação de hábitos construídos</li>
+            <li>Definição do próximo ciclo de acompanhamento</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-step reveal">
+        <div class="timeline-step-num"><strong>0–90 dias</strong>Entre encontros</div>
+        <h3>Suporte WhatsApp contínuo</h3>
+        <div class="timeline-step-body">
+          <p>Canal direto para dúvidas pontuais ao longo de todo o programa. Não é substituto da consulta — é o que evita que <em>uma dúvida pequena</em> vire um problema grande até o próximo encontro.</p>
+          <ul>
+            <li>Dúvidas sobre medicação prescrita</li>
+            <li>Esclarecimentos sobre exames intermediários</li>
+            <li>Suporte em situações pontuais do dia a dia</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTIMENTO -->
+<section class="investment">
+  <div class="container">
+    <div class="section-label reveal"><span class="num">04</span>Investimento</div>
+    <div class="investment-grid">
+      <div class="investment-lead reveal">
+        <h2>Tratamento sério<br>tem <em>investimento</em><br>compatível.</h2>
+        <p>Programa estruturado de <em>3 meses</em>, com cinco encontros médicos e suporte direto. Pago em parcela única ou em até três vezes — sem juros.</p>
+        <p style="font-size: 17px; margin-top: 32px;">Quem busca consulta avulsa pode agendar separadamente. <em>O programa é para quem aceita o tempo necessário</em> de um tratamento bem feito.</p>
+      </div>
+      <div class="investment-card reveal">
+        <div class="investment-tag">Programa PRIME 90</div>
+        <h3>Acompanhamento clínico de 90 dias</h3>
+        <div class="subtitle">5 encontros médicos · Suporte WhatsApp · 90 dias</div>
+        <div class="investment-rows">
+          <div class="investment-row">
+            <span class="label">Duração</span>
+            <span class="value">3 meses</span>
+          </div>
+          <div class="investment-row">
+            <span class="label">Encontros com o médico</span>
+            <span class="value">5 encontros</span>
+          </div>
+          <div class="investment-row">
+            <span class="label">Suporte entre encontros</span>
+            <span class="value">WhatsApp</span>
+          </div>
+          <div class="investment-row">
+            <span class="label">Parcelamento</span>
+            <span class="value">3× sem juros</span>
+          </div>
+          <div class="investment-row total">
+            <span class="label">Investimento</span>
+            <span class="value">R$ 2.197</span>
+          </div>
+        </div>
+        <p class="note">Ou <em>3× de R$ 732,33</em> sem juros no cartão. Exames laboratoriais e medicações eventualmente prescritas não estão inclusos — variam conforme indicação clínica e plano de saúde.</p>
+        <div class="investment-cta">
+          <a href="https://wa.me/5511950792425?text=Olá,%20Dr.%20Mauricio.%20Vim%20pelo%20Google%20e%20quero%20saber%20mais%20sobre%20o%20PRIME%2090." target="_blank" rel="noopener" class="btn btn-primary" style="width: 100%; justify-content: center;">Falar com a equipe <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="consulta" class="cta-final">
+  <div class="container">
+    <div class="section-label reveal"><span class="num">05</span>Próximo passo</div>
+    <h2 class="reveal">Você pode<br><em>continuar tentando</em><br>sozinha. Ou pode<br><em>finalmente entender</em><br>o que está travando.</h2>
+    <div class="cta-final-body">
+      <p class="reveal">A decisão muda os próximos anos da sua vida — não só os próximos meses. Não é mais esforço que falta. É método construído a partir do seu corpo, da sua história e dos seus exames. O PRIME 90 existe exatamente para isso.</p>
+      <div class="reveal">
+        <div class="hero-cta-row" style="margin-top: 0;">
+          <a href="https://wa.me/5511950792425?text=Olá,%20Dr.%20Mauricio.%20Vim%20pelo%20Google%20e%20quero%20saber%20mais%20sobre%20o%20PRIME%2090." target="_blank" rel="noopener" class="btn btn-primary">Falar com a equipe <span class="arrow">→</span></a>
+          <a href="index.html" class="btn btn-ghost">Voltar à página inicial</a>
+        </div>
+        <p style="font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245, 240, 232, 0.5); margin-top: 24px; font-weight: 500; line-height: 1.7;">Vagas limitadas por mês. Para garantir acompanhamento próximo e individualizado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">Dr. Mauricio Vidal<span>Emagrecimento Clínico · CRM-SP 263079</span></div>
+        <p>Consulta médica online de emagrecimento baseada em investigação individualizada. Para quem busca tratamento, não mais uma tentativa.</p>
+      </div>
+      <div class="footer-col"><h5>Navegação</h5><ul><li><a href="index.html#manifesto">Filosofia</a></li><li><a href="index.html#metodo">Método</a></li><li><a href="index.html#artigos">Jornal</a></li><li><a href="index.html#perguntas">Dúvidas</a></li></ul></div>
+      <div class="footer-col"><h5>Contato</h5><ul><li><a href="https://wa.me/5511950792425" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:mauriciovidal47@gmail.com">E-mail</a></li><li><a href="https://instagram.com/drmauriciovidal" target="_blank" rel="noopener">Instagram</a></li></ul></div>
+      <div class="footer-col"><h5>Atendimento</h5><ul><li>Consultas online</li><li>Seg a sáb · 08h–20h</li><li>São Paulo · Brasil</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="disclaimer">© 2026 Dr. Mauricio Vidal. Todas as informações deste site têm caráter educativo e não substituem consulta médica individual. O conteúdo aqui publicado não estabelece relação médico-paciente. CRM-SP 263079.</div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5511950792425?text=Olá,%20Dr.%20Mauricio.%20Vim%20pelo%20Google%20e%20quero%20saber%20mais%20sobre%20o%20PRIME%2090." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  WhatsApp
+</a>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

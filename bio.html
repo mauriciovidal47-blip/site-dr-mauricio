@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Google tag (gtag.js) - Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18087163060"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18087163060');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Dr. Mauricio Vidal · Links</title>
+  <meta name="description" content="Emagrecimento clínico online. Programa estruturado para mulheres 35+ que buscam tratamento sério, não mais uma tentativa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0A0A0A;
+      --paper: #F5F0E8;
+      --paper-deep: #E8DFD3;
+      --petrol: #1B3A4B;
+      --petrol-deep: #0E2632;
+      --rule: rgba(10, 10, 10, 0.12);
+      --muted: rgba(10, 10, 10, 0.6);
+      --display: "Fraunces", Georgia, serif;
+      --sans: "Geist", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 400;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+      pointer-events: none;
+      z-index: 100;
+      mix-blend-mode: multiply;
+      opacity: 0.5;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    .bio {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 56px 24px 40px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* HEADER */
+    .bio-header {
+      text-align: center;
+      margin-bottom: 48px;
+      animation: fadeUp 0.9s ease both;
+    }
+    .avatar {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      background: var(--petrol);
+      color: var(--paper);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 300;
+      font-size: 38px;
+      letter-spacing: -0.02em;
+      box-shadow: 0 12px 40px rgba(27, 58, 75, 0.18);
+      position: relative;
+      overflow: hidden;
+    }
+    .avatar::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.12), transparent 60%);
+      pointer-events: none;
+    }
+    .bio-name {
+      font-family: var(--display);
+      font-weight: 400;
+      font-style: italic;
+      font-size: 28px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+    .bio-credential {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    .bio-tagline {
+      font-family: var(--display);
+      font-weight: 300;
+      font-size: 19px;
+      line-height: 1.35;
+      letter-spacing: -0.015em;
+      max-width: 24ch;
+      margin: 0 auto;
+    }
+    .bio-tagline em {
+      font-style: italic;
+      color: var(--petrol);
+    }
+
+    /* DIVIDER */
+    .bio-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 auto 28px;
+      max-width: 280px;
+      animation: fadeUp 0.9s 0.15s ease both;
+    }
+    .bio-divider::before,
+    .bio-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+    .bio-divider span {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* LINKS */
+    .bio-links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+
+    .link-card {
+      display: block;
+      position: relative;
+      padding: 20px 22px;
+      background: white;
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      transition: all 0.25s ease;
+      animation: fadeUp 0.7s ease both;
+    }
+    .link-card:nth-child(1) { animation-delay: 0.20s; }
+    .link-card:nth-child(2) { animation-delay: 0.28s; }
+    .link-card:nth-child(3) { animation-delay: 0.36s; }
+    .link-card:nth-child(4) { animation-delay: 0.44s; }
+    .link-card:nth-child(5) { animation-delay: 0.52s; }
+
+    .link-card:hover,
+    .link-card:active {
+      transform: translateY(-2px);
+      border-color: var(--ink);
+      box-shadow: 0 8px 24px rgba(10, 10, 10, 0.08);
+    }
+    .link-card .card-tag {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .link-card .card-title {
+      font-family: var(--display);
+      font-weight: 400;
+      font-size: 19px;
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+      margin-bottom: 4px;
+    }
+    .link-card .card-title em {
+      font-style: italic;
+      color: var(--petrol);
+    }
+    .link-card .card-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+      padding-right: 24px;
+    }
+    .link-card .card-arrow {
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 22px;
+      color: var(--ink);
+      transition: transform 0.25s ease;
+    }
+    .link-card:hover .card-arrow,
+    .link-card:active .card-arrow {
+      transform: translateY(-50%) translateX(4px);
+    }
+
+    /* PRIMARY (PRIME 90) */
+    .link-card.primary {
+      background: var(--petrol);
+      border-color: var(--petrol);
+      color: var(--paper);
+      padding: 26px 22px;
+    }
+    .link-card.primary .card-tag {
+      color: rgba(245, 240, 232, 0.6);
+    }
+    .link-card.primary .card-title {
+      font-size: 22px;
+      color: var(--paper);
+    }
+    .link-card.primary .card-title em {
+      color: var(--paper-deep);
+    }
+    .link-card.primary .card-desc {
+      color: rgba(245, 240, 232, 0.8);
+      font-size: 13.5px;
+    }
+    .link-card.primary .card-arrow {
+      color: var(--paper);
+    }
+    .link-card.primary:hover,
+    .link-card.primary:active {
+      background: var(--petrol-deep);
+      border-color: var(--petrol-deep);
+      box-shadow: 0 12px 32px rgba(27, 58, 75, 0.28);
+    }
+
+    /* WHATSAPP CARD - subtle highlight */
+    .link-card.whatsapp .card-tag {
+      color: #1fb855;
+    }
+
+    /* EBOOK CARD - has price tag */
+    .link-card.ebook .card-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--petrol);
+    }
+    .link-card.ebook .card-meta::before {
+      content: "";
+      width: 16px;
+      height: 1px;
+      background: var(--petrol);
+    }
+
+    /* MUTED CARD (artigos) */
+    .link-card.subtle {
+      background: transparent;
+      border-style: dashed;
+      border-color: var(--rule);
+    }
+    .link-card.subtle .card-title {
+      font-size: 17px;
+    }
+
+    /* FOOTER */
+    .bio-footer {
+      margin-top: auto;
+      padding-top: 32px;
+      border-top: 1px solid var(--rule);
+      text-align: center;
+      animation: fadeUp 0.9s 0.6s ease both;
+    }
+    .bio-footer .marquee-mini {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 300;
+      font-size: 14px;
+      color: var(--petrol);
+      margin-bottom: 18px;
+      line-height: 1.4;
+    }
+    .bio-footer .disclaimer {
+      font-size: 10.5px;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 38ch;
+      margin: 0 auto 12px;
+    }
+    .bio-footer .copyright {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    ::selection { background: var(--petrol); color: var(--paper); }
+
+    /* Responsive tweaks */
+    @media (max-width: 380px) {
+      .bio { padding: 40px 18px 32px; }
+      .bio-name { font-size: 25px; }
+      .bio-tagline { font-size: 17px; }
+      .link-card { padding: 18px 18px; }
+      .link-card.primary { padding: 22px 18px; }
+      .link-card .card-title { font-size: 17px; }
+      .link-card.primary .card-title { font-size: 20px; }
+      .link-card .card-arrow { right: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<main class="bio">
+
+  <!-- HEADER -->
+  <header class="bio-header">
+    <div class="avatar" aria-hidden="true">MV</div>
+    <h1 class="bio-name">Dr. Mauricio Vidal</h1>
+    <p class="bio-credential">CRM-SP 263079 · Emagrecimento Clínico</p>
+    <p class="bio-tagline">Para quem <em>já tentou de tudo</em> e continua no mesmo lugar.</p>
+  </header>
+
+  <div class="bio-divider"><span>Por onde começar</span></div>
+
+  <!-- LINKS -->
+  <section class="bio-links">
+
+    <!-- 1. PRIME 90 (destaque máximo) -->
+    <a href="prime-90.html?utm_source=instagram&utm_medium=bio&utm_campaign=prime90" class="link-card primary">
+      <div class="card-tag">Programa estruturado · 3 meses</div>
+      <div class="card-title">PRIME 90 — <em>acompanhamento médico</em></div>
+      <div class="card-desc">Avaliação inicial estendida + 4 retornos mensais + suporte direto por WhatsApp.</div>
+      <span class="card-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <!-- 2. WhatsApp -->
+    <a href="https://wa.me/5511950792425?text=Ol%C3%A1%2C%20Dr.%20Mauricio.%20Vim%20pelo%20Instagram%20e%20quero%20entender%20se%20faz%20sentido%20para%20o%20meu%20caso." class="link-card whatsapp" target="_blank" rel="noopener">
+      <div class="card-tag">Falar com a equipe</div>
+      <div class="card-title">WhatsApp do consultório</div>
+      <div class="card-desc">Tirar dúvidas sobre o programa e verificar disponibilidade na agenda.</div>
+      <span class="card-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <!-- 3. Ebook -->
+    <a href="ebook.html?utm_source=instagram&utm_medium=bio&utm_campaign=ebook" class="link-card ebook">
+      <div class="card-tag">E-book · Material clínico</div>
+      <div class="card-title">Não é preguiça, é <em>hormônio</em></div>
+      <div class="card-desc">Guia clínico de 30 dias para a mulher 35+ que sente que o corpo virou outro.</div>
+      <span class="card-meta">R$ 47,90 · entrega imediata</span>
+      <span class="card-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <!-- 4. Site -->
+    <a href="index.html?utm_source=instagram&utm_medium=bio&utm_campaign=home" class="link-card">
+      <div class="card-tag">Conhecer a abordagem</div>
+      <div class="card-title">Filosofia e método</div>
+      <div class="card-desc">Como penso emagrecimento clínico, para quem atendo e o que esperar do tratamento.</div>
+      <span class="card-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <!-- 5. Artigos -->
+    <a href="index.html?utm_source=instagram&utm_medium=bio&utm_campaign=artigos#artigos" class="link-card subtle">
+      <div class="card-tag">Jornal clínico</div>
+      <div class="card-title">Artigos para entender o seu corpo</div>
+      <div class="card-desc">Resistência à insulina, fome 2h depois de comer, balança travada — o que ninguém te explicou.</div>
+      <span class="card-arrow" aria-hidden="true">→</span>
+    </a>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bio-footer">
+    <p class="marquee-mini">Investigação antes de prescrição · Método, não milagre</p>
+    <p class="disclaimer">Conteúdo educativo. Não estabelece relação médico-paciente nem substitui consulta individual.</p>
+    <p class="copyright">© 2026 · CRM-SP 263079</p>
+  </footer>
+
+</main>
+
+</body>
+</html>

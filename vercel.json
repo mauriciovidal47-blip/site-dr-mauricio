@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/landing-google-v2", "destination": "/landing-google-v2.html" }
+  ]
+}

@@ -452,6 +452,170 @@
     }
     .prime-desc { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.6; }
 
+    /* ─── JORNADA: DOIS CARDS LADO A LADO ────────────────────── */
+    .jornada-intro {
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-soft);
+      line-height: 1.6;
+      max-width: 560px;
+      margin: 0 auto 32px;
+    }
+    .cards-jornada {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    .jcard {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card);
+      padding: 32px 26px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .jcard-prime {
+      background: linear-gradient(160deg, var(--petroleo) 0%, var(--petroleo-l) 100%);
+      border: 1px solid var(--gold);
+      position: relative;
+      overflow: hidden;
+    }
+    .jcard-prime::before {
+      content: 'Acompanhamento completo';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      background: var(--gold);
+      color: var(--petroleo);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px;
+    }
+    .jcard-prime .jcard-body { padding-top: 22px; }
+    .jcard-step {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+    .jcard .jcard-step { background: rgba(30,58,63,0.07); color: var(--petroleo); }
+    .jcard-prime .jcard-step { background: rgba(184,149,90,0.22); color: var(--gold-l); border: 1px solid rgba(184,149,90,0.3); }
+    .jcard-name {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .jcard .jcard-name { color: var(--petroleo); }
+    .jcard-prime .jcard-name { color: var(--white); }
+    .jcard-tagline {
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      min-height: 40px;
+    }
+    .jcard .jcard-tagline { color: var(--text-soft); }
+    .jcard-prime .jcard-tagline { color: rgba(255,255,255,0.7); }
+    .jcard-price {
+      font-size: 38px;
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .jcard .jcard-price { color: var(--petroleo); }
+    .jcard-prime .jcard-price { color: var(--white); }
+    .jcard-price strong { font-weight: 600; }
+    .jcard-price-note {
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+    .jcard .jcard-price-note { color: var(--text-muted); }
+    .jcard-prime .jcard-price-note { color: rgba(255,255,255,0.55); }
+    .jcard-value-flag {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gold-l);
+      background: rgba(184,149,90,0.12);
+      border-radius: 8px;
+      padding: 8px 10px;
+      line-height: 1.4;
+      margin-bottom: 22px;
+    }
+    .jcard-includes {
+      list-style: none;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin-bottom: 26px;
+      flex-grow: 1;
+    }
+    .jcard-includes li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 13.5px;
+      line-height: 1.45;
+    }
+    .jcard .jcard-includes li { color: var(--text-soft); }
+    .jcard-prime .jcard-includes li { color: rgba(255,255,255,0.85); }
+    .jcard-includes li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 15px;
+      height: 15px;
+      margin-top: 1px;
+    }
+    .jcard .jcard-includes li::before {
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='8' fill='%231E3A3F' opacity='.12'/%3E%3Cpath d='M4.5 8l2.5 2.5 4.5-5' stroke='%231E3A3F' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E") no-repeat center / contain;
+    }
+    .jcard-prime .jcard-includes li::before {
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='8' fill='%23B8955A' opacity='.3'/%3E%3Cpath d='M4.5 8l2.5 2.5 4.5-5' stroke='%23D8BC85' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E") no-repeat center / contain;
+    }
+    .jcard-prime .btn-wa { background: var(--gold); color: var(--petroleo); }
+    .jcard-foot {
+      font-size: 11px;
+      margin-top: 14px;
+      line-height: 1.5;
+    }
+    .jcard .jcard-foot { color: var(--text-muted); }
+    .jcard-prime .jcard-foot { color: rgba(255,255,255,0.5); }
+
+    @media (max-width: 720px) {
+      .cards-jornada {
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: 86%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 14px;
+        padding: 4px 4px 16px;
+        margin: 0 -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .jcard { scroll-snap-align: center; }
+      .swipe-hint {
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+        letter-spacing: 0.04em;
+      }
+    }
+    .swipe-hint { display: none; }
+
     /* ─── SOBRE O MÉDICO ─────────────────────────────────────── */
     .medico-card {
       background: var(--white);
@@ -679,14 +843,11 @@
       </p>
 
       <div class="hero-cta-wrap animate-in delay-4">
-        <a class="btn-wa" href="https://wa.me/5511950792425?text=Olá%2C%20dr.%20Mauricio.%20Vi%20seu%20anúncio%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20consulta%20de%20emagrecimento." id="wa-hero" onclick="trackWA('hero', event)">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
-          Quero agendar minha consulta
+        <a class="btn-wa" href="#precos" id="wa-hero" onclick="scrollToPrecos(event)">
+          Ver como funciona e os valores
         </a>
         <span class="hero-trust">Pós-graduado em Nutrologia · Instituto CDT · CRM-SP 263079</span>
-        <span class="hero-trust">Resposta em horário comercial · Sem compromisso</span>
+        <span class="hero-trust">Consulta médica particular · Resposta em horário comercial</span>
       </div>
     </div>
 
@@ -794,50 +955,69 @@
 </section>
 
 <!-- CONSULTA / PREÇO -->
-<section class="section">
+<section class="section" id="precos">
   <div class="container">
     <span class="section-label">O que você recebe</span>
-    <h2 class="section-h2" style="margin-bottom:28px">Consulta Médica Online</h2>
+    <h2 class="section-h2" style="margin-bottom:18px">Dois caminhos<br><em>para começar.</em></h2>
+    <p class="jornada-intro">A consulta avulsa é a porta de entrada: a investigação completa do seu caso. O PRIME90 é o acompanhamento de perto, por três meses, para quem quer ir até o resultado. Você decide por onde começar.</p>
 
-    <div class="consulta-card">
-      <div class="consulta-tag">Consulta Avulsa</div>
-      <div class="consulta-name">Emagrecimento Clínico</div>
-      <div class="consulta-value-anchor">Investigação médica das causas do seu ganho de peso — conduzida por médico, não por protocolo genérico.</div>
-      <div class="consulta-price"><strong>R$&nbsp;490</strong></div>
-      <div class="consulta-price-note">60–90 minutos · Online · Atendimento em todo o Brasil</div>
+    <div class="cards-jornada">
 
-      <ul class="consulta-includes">
-        <li>Avaliação clínica completa do seu caso</li>
-        <li>Investigação dos fatores que impedem o emagrecimento</li>
-        <li>Conduta médica e prescrição quando clinicamente indicada</li>
-        <li>Orientações alimentares individualizadas</li>
-        <li>Orientações de atividade física</li>
-        <li>Orientações comportamentais</li>
-        <li>Solicitação de exames quando necessário</li>
-        <li>Orientações individualizadas para o seu caso</li>
-      </ul>
-
-      <a class="btn-wa" href="https://wa.me/5511950792425?text=Olá%2C%20dr.%20Mauricio.%20Quero%20agendar%20uma%20consulta%20de%20emagrecimento." id="wa-consulta" onclick="trackWA('consulta', event)" style="max-width:100%;margin:0 auto;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-        Agendar pelo WhatsApp
-      </a>
-
-      <div class="consulta-separator" style="margin-top:24px;"></div>
-
-      <div class="consulta-not-includes">
-        <p>Pagamento por Pix ou cartão de crédito.</p>
-        <p style="margin-top:2px">Esta é a consulta avulsa de avaliação. Para quem deseja acompanhamento próximo — ajustes regulares, plano alimentar e suporte direto entre as consultas — existe o PRIME90, apresentado na consulta quando há indicação.</p>
+      <!-- CARD 1: CONSULTA AVULSA -->
+      <div class="jcard">
+        <span class="jcard-step">Comece por aqui</span>
+        <div class="jcard-body">
+          <div class="jcard-name">Consulta Avulsa</div>
+          <div class="jcard-tagline">A investigação médica das causas do seu ganho de peso — conduzida por médico, não por protocolo genérico.</div>
+          <div class="jcard-price"><strong>R$&nbsp;490</strong></div>
+          <div class="jcard-price-note">60–90 minutos · Online · Todo o Brasil</div>
+        </div>
+        <ul class="jcard-includes">
+          <li>Avaliação clínica completa do seu caso</li>
+          <li>Investigação dos fatores que impedem o emagrecimento</li>
+          <li>Conduta médica e prescrição quando clinicamente indicada</li>
+          <li>Orientações alimentares individualizadas</li>
+          <li>Orientações de atividade física e comportamentais</li>
+          <li>Solicitação de exames quando necessário</li>
+        </ul>
+        <a class="btn-wa" href="https://wa.me/5511950792425?text=Olá%2C%20dr.%20Mauricio.%20Quero%20agendar%20uma%20consulta%20de%20emagrecimento." id="wa-consulta" onclick="trackWA('consulta', event)" style="max-width:100%;margin:0 auto;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Agendar consulta
+        </a>
+        <div class="jcard-foot">Pagamento por Pix ou cartão de crédito.</div>
       </div>
-    </div>
 
-    <!-- PRIME90 TEASER -->
-    <div class="prime-teaser">
-      <div class="prime-tag">Acompanhamento Continuado</div>
-      <div class="prime-title">PRIME90 — 3 meses de acompanhamento</div>
-      <div class="prime-desc">Para quem quer acompanhamento próximo, ajustes regulares e suporte direto entre as consultas. Discutido durante a consulta inicial quando há indicação.</div>
+      <!-- CARD 2: PRIME90 -->
+      <div class="jcard jcard-prime">
+        <div class="jcard-body">
+          <span class="jcard-step">Acompanhamento de perto</span>
+          <div class="jcard-name">PRIME90</div>
+          <div class="jcard-tagline">Três meses comigo ao seu lado, do início ao resultado — com suporte direto entre as consultas.</div>
+          <div class="jcard-price"><strong>R$&nbsp;1.990</strong></div>
+          <div class="jcard-price-note">3 meses · 5 consultas · Online</div>
+          <div class="jcard-value-flag">5 consultas avulsas custariam R$&nbsp;2.450. No PRIME90 você paga menos e ainda tem meu acompanhamento direto.</div>
+        </div>
+        <ul class="jcard-includes">
+          <li>5 consultas ao longo de 3 meses</li>
+          <li>Acesso ao meu WhatsApp de segunda a sexta para tirar dúvidas</li>
+          <li>Envio de atualizações e evoluções para ajuste contínuo</li>
+          <li>Seguimento de perto entre as consultas</li>
+          <li>Estratégia revisada conforme seu corpo responde</li>
+          <li>Tudo o que a consulta avulsa inclui, ao longo da jornada</li>
+        </ul>
+        <a class="btn-wa" href="https://wa.me/5511950792425?text=Olá%2C%20dr.%20Mauricio.%20Tenho%20interesse%20no%20PRIME90%2C%20o%20acompanhamento%20de%203%20meses." id="wa-prime" onclick="trackWA('prime', event)" style="max-width:100%;margin:0 auto;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Quero o PRIME90
+        </a>
+        <div class="jcard-foot">Parcelável no cartão. Indicado conforme o seu caso.</div>
+      </div>
+
     </div>
+    <span class="swipe-hint">← deslize para comparar →</span>
 
   </div>
 </section>
@@ -1019,6 +1199,14 @@
   }
 
   /* ─── WHATSAPP CONVERSION TRACKING ─────── */
+  function scrollToPrecos(event) {
+    if (event) event.preventDefault();
+    var alvo = document.getElementById('precos');
+    if (alvo) {
+      alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
   function trackWA(location, event) {
     // Previne navegação imediata para garantir que o evento dispare
     if (event) event.preventDefault();
